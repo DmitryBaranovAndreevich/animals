@@ -1,0 +1,44 @@
+.headerInMain {
+  padding: 85px 270px 95px 270px;
+  background: url("../../../images/GiantPanda.jpg") no-repeat center/cover;
+  overflow: hidden;
+
+  &_positon_donate {
+    box-sizing: border-box;
+    min-height: 390px;
+  }
+
+  &__wrapper {
+    display: flex;
+    margin: 0 auto;
+    align-items: flex-end;
+    flex-direction: column;
+    max-width: $mainWidth;
+    gap: 60px;
+  }
+
+  &__span {
+    color: #ffee2e;
+  }
+
+  &__title {
+    position: relative;
+    max-width: 400px;
+    margin: 0;
+    text-align: center;
+    @include font-source-sans(106px, #ffffff, 700, 80px);
+    text-transform: uppercase;
+    z-index: 1;
+
+    &:before {
+      @include pseudo;
+      width: 465px;
+      height: 465px;
+      background-image: $color-gradient;
+      border-radius: 50%;
+      z-index: -1;
+      bottom: 10px;
+      right: 50px;
+    }
+  }
+}

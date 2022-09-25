@@ -1,0 +1,230 @@
+.donate {
+  box-sizing: border-box;
+  max-width: $maxWidth;
+  border: 1px solid transparent;
+  margin: 0 auto;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(#fed290, 0.7),
+    rgba(#febdab, 1),
+    rgba(#fed290, 0.6)
+  );
+
+  &_paddinBottom {
+    padding-bottom: 85px;
+  }
+
+  &__wrapper {
+    box-sizing: border-box;
+    max-width: $mainWidth;
+    margin: 69px auto 100px;
+    padding: 41px 100px 50px 100px;
+    background-color: rgba(#fdfdff, 0.52);
+    border-radius: 20px;
+
+    &_position_donate {
+      padding: 30px 70px 50px 120px;
+    }
+  }
+
+  &__title {
+    @include font-source-sans(48px, #fe9013, 400, 58px);
+    margin: 0 auto 35px;
+    text-align: center;
+
+    &_smallMarginBottom {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+
+    &_big {
+      @include font-source-sans(24px, #333b41, 400, 28px);
+      margin-bottom: 40px;
+    }
+
+    &_medium {
+      @include font-source-sans(16px, #333b41, 500, 21px);
+      margin-bottom: 10px;
+    }
+
+    &_small {
+      @include font-source-sans(16px, #333b41, 400, 21px);
+      margin-top: 15px;
+    }
+
+    &_margin {
+      margin-top: 30px;
+    }
+
+    &_position_center {
+      text-align: center;
+    }
+
+    &_bigmargin {
+      margin-top: 35px;
+    }
+  }
+
+  &__link {
+    @include font-source-sans(16px, #333b41, 400, 21px);
+    text-decoration: none;
+    border-bottom: 1px solid #fe9013;
+  }
+
+  &__subtitle {
+    @include font-source-sans(36px, #333b41, 400, 47px);
+    text-align: center;
+    margin: 60px auto 40px;
+  }
+
+  &__slider {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  &__slider-item {
+    max-width: 172px;
+    width: 100%;
+  }
+
+  &__container {
+    background: $color-gradient;
+    padding: 1px;
+    display: inline-block;
+    border-radius: 5px;
+  }
+
+  &__slider-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    background-color: #ffffff;
+
+    &_payment {
+      max-width: 108px;
+      padding: 54px 30px;
+    }
+
+    &_zoo {
+      max-width: 86px;
+      padding: 38px 41px;
+    }
+
+    &_monkey {
+      max-width: 125px;
+      padding: 48px 21px;
+    }
+  }
+
+  &__slider-arrow {
+    position: relative;
+    top: 60px;
+    display: block;
+    max-width: 70px;
+    max-height: 35px;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__widget {
+    position: relative;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 15px;
+  }
+
+  &__widget-number {
+    margin: 10px 0 0 0;
+    @include font-source-sans(72px, #000000, 500, 58px);
+    text-align: center;
+  }
+
+  &__widget-text {
+    margin: 50px 0 0 0;
+    @include font-source-sans(16px, #000000, 400, 22px);
+
+    &_margin_small {
+      margin-top: 20px;
+    }
+  }
+
+  &__widget-multiplay {
+    width: 14px;
+    height: 14px;
+  }
+
+  &__widget-animals {
+    display: block;
+    max-width: 270px;
+    max-height: 246px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 40px;
+  }
+
+  &__input {
+    display: block;
+    max-width: 248px;
+    width: 100%;
+    margin: 55px auto 25px;
+    padding: 16px 9px;
+    background-color: transparent;
+    border: 1px solid #929699;
+    background: url("../../../icons/dollar.svg") no-repeat 95%;
+    border-radius: 2px;
+
+    &::placeholder {
+      @include font-source-sans(16px, #929699, 400, 22px);
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+          margin: 0
+    }
+
+
+  }
+
+  &__checkbox {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__radio {
+    width: 0;
+    height: 0;
+
+    &:checked + .donate__label {
+      background-color: #fe9013;
+    }
+  }
+
+  &__label {
+    width: 14px;
+    height: 14px;
+    border: 1px solid #fe9013;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  &__span {
+    @include font-source-sans(16px, #333b41, 400, 22px);
+    margin-right: 50px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

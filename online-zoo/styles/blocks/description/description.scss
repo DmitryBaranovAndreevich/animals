@@ -1,0 +1,28 @@
+.description {
+  padding: 140px 0 160px;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  background: url("../../../images/flower_foto1.jpg") no-repeat 100% 10%;
+
+  &__wrapper {
+    width: $mainWidth;
+    margin: 0 auto;
+    display: flex;
+    gap: 75px;
+  }
+
+  &__image {
+    max-width: 609px;
+    max-height: 403px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__text-container {
+    display: flex;
+    padding: 0 10px;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

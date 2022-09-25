@@ -1,0 +1,56 @@
+.button {
+  display: block;
+  @include font-source-sans(16px, #ffffff, 500, 22px);
+  padding: 16px 100px;
+  background-image: $color-gradient;
+  border: none;
+  transition: $mainTransition;
+  text-transform: uppercase;
+  border-radius: 5px;
+
+  &:hover {
+    opacity: $contentOpacity;
+    cursor: pointer;
+  }
+
+  &_borderRadius_active {
+    border-radius: 25px;
+  }
+
+  &_position_headerInMain {
+    margin-right: 50px;
+  }
+
+  &_position_slider {
+    padding: 16px 55px;
+    margin: 80px auto 0;
+  }
+
+  &_position_donate {
+    text-decoration: none;
+    display: block;
+    box-sizing: border-box;
+    max-width: 298px;
+    padding: 16px;
+    text-align: center;
+    margin:55px auto 10px;
+  }
+
+  &_smallMarginTop {
+    margin-top: 30px;
+  }
+
+  &_position_testimonials {
+    margin: 30px 0 0 0;
+    padding: 16px 85px;
+  }
+
+  &_position_footer {
+    display: block;
+    box-sizing: border-box;
+    max-width: 298px;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,31 @@
+.nav {
+  width: 100%;
+
+  &__wrapper {
+    list-style-type: none;
+    padding: 0 63px;
+    display: flex;
+  }
+
+  &__element + &__element {
+    margin-left: 58px;
+  }
+
+  &__link {
+    @include font-source-sans(16px, #ffffff, 500, 23px);
+    text-decoration: none;
+
+    &:hover {
+      opacity: $headerOpacity;
+    }
+
+    &_active {
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-image: $color-gradient;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}

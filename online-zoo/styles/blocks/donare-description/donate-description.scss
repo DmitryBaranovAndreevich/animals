@@ -1,0 +1,19 @@
+.donate-description {
+  max-width: $mainWidth;
+  margin: 0 auto;
+
+  &__title {
+    @include font-source-sans(36px, #FFFFFF, 400, 47px);
+    margin: 30px 0 10px;
+  }
+
+  &__text {
+    @include font-source-sans(16px, #FFFFFF, 500, 22px);
+      margin: 0 0 50px;
+  }
+
+  &__subtitle {
+    @include font-source-sans(36px, #FE9013, 400, 47px);
+      margin: 0;
+  }
+}

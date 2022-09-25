@@ -1,0 +1,88 @@
+.testimonials {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  background: url("../../../images/leav_foto.jpg") no-repeat right 110%/ 260px 330px;
+
+  &__wrapper {
+    max-width: $mainWidth;
+    margin: 0 auto;
+    padding: 140px 0 180px;
+  }
+
+  &__title {
+    margin: 0 0 35px 0;
+    @include font-source-sans(36px, #333b41, 400, 47px);
+    text-align: center;
+  }
+
+  &__posts {
+    padding: 5px 5px 20px;
+    display: flex;
+    overflow-x: scroll;
+    gap: 35px;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #f5f7f6;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #fe9013;
+      border-radius: 10px;
+    }
+  }
+
+  &__post {
+    box-sizing: border-box;
+    position: relative;
+    min-width: 260px;
+    width: auto;
+    padding: 15px;
+    border: 0px solid transparent;
+    border-radius: 20px;
+    background: #f1f3f2;
+
+    &:after {
+      @include pseudo;
+      top: -2px;
+      bottom: -2px;
+      left: -2px;
+      right: -2px;
+      background: linear-gradient(
+        rgba(#febdab, 0.74),
+        rgba(#f3a9f8, 0.66),
+      );
+      border-radius: 20px;
+      z-index: -1;
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__avatar {
+    margin-right: 10px;
+    width: 37px;
+    height: 37px;
+    object-fit: cover;
+  }
+
+  &__name {
+    margin: 0;
+    @include font-source-sans(16px, #000000, 400, 19px);
+  }
+
+  &__location {
+    margin: 0;
+    @include font-source-sans(15px, #bdbdbd, 300, 18px);
+  }
+
+  &__text {
+    margin: 10px 0 10px 0;
+    @include font-source-sans(15px, #bdbdbd, 300, 18px);
+  }
+}

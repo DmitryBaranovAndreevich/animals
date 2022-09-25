@@ -1,0 +1,8 @@
+.subTitle {
+  margin: 0;
+  @include font-source-sans(24px, #333b41, 400, 29px);
+
+  &_position_description {
+    margin: 35px 0 14px 0;
+  }
+}

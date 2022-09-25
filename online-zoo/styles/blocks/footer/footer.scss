@@ -1,0 +1,55 @@
+.footer {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  background: #000000;
+
+  &__wrapper {
+    padding: 41px 0 50px;
+    max-width: $mainWidth;
+    margin: 0 auto;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+
+  &__links-container {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__links {
+    max-width: 330px;
+    width: 100%;
+    margin-top: 40px;
+    padding: 0;
+    @include font-source-sans(16px, #ffffff, 400, 23px);
+    list-style-type: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    @include font-source-sans(16px, #ffffff, 400, 23px);
+    display: flex;
+    align-items: center;
+    margin-top: 11px;
+    transition: $mainTransition;
+
+    &:hover {
+      opacity: $headerOpacity;
+    }
+  }
+
+  &__linc-logo {
+    width: 16px;
+    height: 16px;
+    object-fit: cover;
+    background: rgba(196, 196, 196, 0.5);
+    border: 5px solid rgba(196, 196, 196, 0.5);
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+}
