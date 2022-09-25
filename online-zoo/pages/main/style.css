@@ -401,7 +401,7 @@ template {
 
 .headerInMain {
   padding: 85px 270px 95px 270px;
-  background: url("../../../images/GiantPanda.jpg") no-repeat center/cover;
+  background: url("../../images/GiantPanda.jpg") no-repeat center/cover;
   overflow: hidden; }
   .headerInMain_positon_donate {
     box-sizing: border-box;
