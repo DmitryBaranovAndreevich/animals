@@ -33,7 +33,7 @@
     max-width: 298px;
     padding: 16px;
     text-align: center;
-    margin:55px auto 10px;
+    margin: 55px auto 10px;
   }
 
   &_smallMarginTop {
@@ -52,5 +52,36 @@
     padding: 16px;
     text-align: center;
     text-decoration: none;
+  }
+
+  @media screen and(max-width: $desctop) {
+    & {
+      &_position_donate {
+        margin: 75px auto 0;
+      }
+
+      &_position_testimonials {
+        margin-top: 55px;
+      }
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+    &_position_headerInMain {
+      align-self: flex-start;
+    }
+
+    &_position_slider {
+      margin-top: 60px;
+    }
+
+    &_position_donate {
+      margin: 45px auto 0;
+    }
+
+    &_position_testimonials {
+      margin: 25px auto 30px;
+      padding: 16px 50px;
+    }
   }
 }

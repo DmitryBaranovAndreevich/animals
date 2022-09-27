@@ -34,11 +34,13 @@ form.addEventListener('submit', (e) => {
 form.addEventListener('input', isValid)
 
 let position = 0;
-const showElements = 3;
+let showElements = 3;
 const scrolElements = 2;
 
 const slider = document.querySelector(".slider");
 const container = slider.querySelector(".slider__container");
+ if (container.clientWidth < 800) showElements = 2;
+ if (container.clientWidth > 800) showElements = 3;
 const tracks = slider.querySelectorAll(".slider__track");
 const items = slider.querySelectorAll(".slider__item");
 const btnPrev = slider.querySelector(".slider__button-prev");
@@ -46,23 +48,54 @@ const btnNext = slider.querySelector(".slider__button-next");
 const itemWidth =
   (container.clientWidth - 30 * (showElements - 1)) / showElements;
 const movePosition = scrolElements * itemWidth + 30 * scrolElements;
+const testimonals = document.querySelector(".testimonials");
+
 
 setWidth();
 check();
+setPosts();
+
+window.addEventListener('resize', () => {
+   tracks.forEach((track) => {
+     track.style.transform = `translateX(0)`;
+   });
+  position = 0;
+  cardWidth = container.clientWidth;
+  if (container.clientWidth < 800) showElements = 2;
+   if (container.clientWidth > 800) showElements = 3;
+  setWidth();
+  check();
+  if(testimonals.clientWidth < 950) {setPostsNone()}
+})
+
+function setPostsNone() {
+  const posts = testimonals.querySelectorAll(".testimonials__post");
+  for (let i = 3; i < posts.length; i++) {
+    posts[i].style.display = `none`;
+  }
+}
 
 function setWidth() {
+  const itemWidth =
+    (container.clientWidth - 30 * (showElements - 1)) / showElements;
   items.forEach((item) => {
     item.style.minWidth = `${itemWidth}px`;
+    const image = item.querySelector(".slider__item-image");
+    const koff = container.clientWidth > 800 ? 0.321 : 0.446;
+    image.style.maxWidth = `${itemWidth - 2}px`;
+    image.style.maxHeight = `${itemWidth}px`;
   });
 }
 
 function check() {
+  const itemWidth =
+    (container.clientWidth - 30 * (showElements - 1)) / showElements;
   if (position >= 0) {
     btnPrev.setAttribute("disabled", true);
   } else {
     btnPrev.removeAttribute("disabled");
   }
-  if (position <= -itemWidth * ((items.length - 1) / 2 - showElements)) {
+  if (position <= -itemWidth * ((items.length) / 2 - showElements)) {
     btnNext.setAttribute("disabled", true);
   } else {
     btnNext.removeAttribute("disabled");
@@ -70,12 +103,14 @@ function check() {
 }
 
 btnNext.onclick = function () {
+  const itemWidth =
+    (container.clientWidth - 30 * (showElements - 1)) / showElements;
+  const movePosition = scrolElements * itemWidth + 30 * scrolElements;
   const itemsLeft =
     Math.ceil(items.length / 2 -
     (Math.abs(position) + showElements * itemWidth) / itemWidth);
-  console.log(itemsLeft);
   position -=
-    itemsLeft >= scrolElements
+    itemsLeft > scrolElements
       ? movePosition
       : itemsLeft * itemWidth + 30 * itemsLeft;;
 
@@ -86,7 +121,10 @@ btnNext.onclick = function () {
 };
 
 btnPrev.onclick = function () {
-  position += movePosition;
+  const itemWidth =
+    (container.clientWidth - 30 * (showElements - 1)) / showElements;
+  const movePosition = scrolElements * itemWidth + 30 * scrolElements;
+  position += 0 - position > movePosition ? movePosition : 0 - position;
   tracks.forEach((track) => {
     track.style.transform = `translateX(${position}px)`;
   });

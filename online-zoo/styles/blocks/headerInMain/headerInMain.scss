@@ -41,4 +41,49 @@
       right: 50px;
     }
   }
+
+  @media screen and(max-width: $desctop) {
+    & {
+      padding: 40px 90px 55px 85px;
+
+      &__wrapper {
+        gap: 40px;
+      }
+
+      &__title {
+        @include font-source-sans(85px, #ffffff, 700, 63px);
+
+        &:before {
+          width: 367px;
+          height: 367px;
+          bottom: 5px;
+          right: 85px;
+        }
+      }
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+
+    & {
+      padding: 50px 20px 35px 20px;
+    }
+
+    &__wrapper {
+      gap: 0;
+    }
+
+    &__title {
+      max-width:  255px;
+        @include font-source-sans(54px, #ffffff, 700, 40px);
+
+        &:before {
+          width: 237px;
+          height: 237px;
+          bottom: 5px;
+          right: 55px;
+        }
+      }
+
+  }
 }

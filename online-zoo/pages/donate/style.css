@@ -324,10 +324,11 @@ template {
   src: url(../../roboto/Robotothin.woff2) format("woff2"), url(../../roboto/Robotothin.woff) format("woff");
   font-weight: 100; }
 .header {
+  box-sizing: border-box;
   max-width: 1600px;
   background-color: #000000;
   margin: 0 auto;
-  padding: 14px 0; }
+  padding: 14px 30px; }
   .header__wrapper {
     max-width: 1160px;
     margin: 0 auto;
@@ -344,6 +345,20 @@ template {
     flex-shrink: 0;
     cursor: pointer;
     text-decoration: none; }
+  .header__button {
+    display: none;
+    min-width: 18px;
+    min-height: 12px;
+    background: url("../../../icons/burger_menu.svg") no-repeat center/cover; }
+  @media screen and (max-width: 970px) {
+    .header {
+      padding: 2px 20px; }
+    .header__wrapper {
+      justify-content: space-between; }
+    .header__text {
+      display: none; }
+    .header__button {
+      display: block; } }
 
 .logo {
   cursor: pointer;
@@ -360,7 +375,8 @@ template {
   font-weight: 400;
   line-height: 23px;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 2px; }
+  border-radius: 2px;
+  text-decoration: none; }
   .logo:after {
     content: "";
     display: block;
@@ -369,6 +385,16 @@ template {
     width: 20px;
     height: 20px;
     bottom: 5px; }
+  @media screen and (max-width: 970px) {
+    .logo_position_header {
+      border: none;
+      font-family: "Roboto", "Arial", sans-serif;
+      font-size: 12px;
+      color: #ffffff;
+      font-weight: 400;
+      line-height: 15px;
+      padding: 0;
+      max-width: 46px; } }
 
 .nav {
   width: 100%; }
@@ -394,6 +420,16 @@ template {
       background-image: linear-gradient(#f9804b, #fe9013);
       pointer-events: none;
       cursor: default; }
+  @media screen and (max-width: 1300px) {
+    .nav__element + .nav__element {
+      margin-left: 48px; } }
+  @media screen and (max-width: 970px) {
+    .nav__element + .nav__element {
+      margin-left: 40px; }
+    .nav_notactive {
+      display: none; }
+    .nav__wrapper_position_footer {
+      padding: 0; } }
 
 .main {
   margin: 0 auto;
@@ -438,6 +474,39 @@ template {
       z-index: -1;
       bottom: 10px;
       right: 50px; }
+  @media screen and (max-width: 1300px) {
+    .headerInMain {
+      padding: 40px 90px 55px 85px; }
+      .headerInMain__wrapper {
+        gap: 40px; }
+      .headerInMain__title {
+        font-family: "Roboto", "Arial", sans-serif;
+        font-size: 85px;
+        color: #ffffff;
+        font-weight: 700;
+        line-height: 63px; }
+        .headerInMain__title:before {
+          width: 367px;
+          height: 367px;
+          bottom: 5px;
+          right: 85px; } }
+  @media screen and (max-width: 970px) {
+    .headerInMain {
+      padding: 50px 20px 35px 20px; }
+    .headerInMain__wrapper {
+      gap: 0; }
+    .headerInMain__title {
+      max-width: 255px;
+      font-family: "Roboto", "Arial", sans-serif;
+      font-size: 54px;
+      color: #ffffff;
+      font-weight: 700;
+      line-height: 40px; }
+      .headerInMain__title:before {
+        width: 237px;
+        height: 237px;
+        bottom: 5px;
+        right: 55px; } }
 
 .donate {
   box-sizing: border-box;
@@ -626,12 +695,53 @@ template {
     margin-right: 50px; }
     .donate__span:last-of-type {
       margin-right: 0; }
+  .donate__arrrow-container {
+    display: none; }
+  .donate__green-arrrow {
+    width: 89px;
+    height: 69px; }
+  @media screen and (max-width: 1300px) {
+    .donate__wrapper {
+      padding: 25px 19px 50px 49px;
+      margin: 30px 30px 45px;
+      gap: 0; }
+    .donate__title {
+      line-height: 50px;
+      margin-bottom: 15px; }
+    .donate__text_big {
+      margin-bottom: 20px; }
+    .donate__text_margin {
+      margin-top: 20px; }
+    .donate__subtitle {
+      margin: 40px auto 40px; } }
+  @media screen and (max-width: 970px) {
+    .donate__title {
+      margin-top: 0px; }
+    .donate__wrapper {
+      margin: 20px 0;
+      padding: 10px 20px 60px; }
+    .donate__subtitle {
+      margin-top: 30px;
+      margin-bottom: 0; }
+    .donate__slider {
+      gap: 42px; }
+    .donate__slider-arrow {
+      display: none; }
+    .donate__arrrow-container {
+      margin-top: -45px;
+      position: relative;
+      top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 140px;
+      z-index: 2; } }
 
 .footer {
   max-width: 1600px;
   margin: 0 auto;
   background: #000000; }
   .footer__wrapper {
+    position: relative;
     padding: 41px 0 50px;
     max-width: 1160px;
     margin: 0 auto; }
@@ -675,6 +785,31 @@ template {
     border: 5px solid rgba(196, 196, 196, 0.5);
     border-radius: 50%;
     margin-right: 12px; }
+  @media screen and (max-width: 1300px) {
+    .footer__wrapper {
+      padding: 41px 40px 50px; }
+    .footer__links {
+      max-width: 230px; } }
+  @media screen and (max-width: 970px) {
+    .footer__wrapper {
+      padding: 12px 20px; }
+    .footer__links-container {
+      margin-top: 80px;
+      flex-direction: row-reverse;
+      justify-content: space-between; }
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: absolute;
+      top: 5px;
+      right: 20px;
+      margin: 0;
+      max-width: 26px; }
+    .footer__link {
+      max-width: 26px;
+      width: 26px;
+      overflow: hidden; } }
 
 .subscribe-form {
   width: 100%;
@@ -738,6 +873,9 @@ template {
   .subscribe-form_valid {
     border: 1px solid #4b9200;
     color: #4b9200; }
+  @media screen and (max-width: 970px) {
+    .subscribe-form {
+      display: none; } }
 
 .button {
   display: block;
@@ -782,6 +920,21 @@ template {
     padding: 16px;
     text-align: center;
     text-decoration: none; }
+  @media screen and (max-width: 1300px) {
+    .button_position_donate {
+      margin: 75px auto 0; }
+    .button_position_testimonials {
+      margin-top: 55px; } }
+  @media screen and (max-width: 970px) {
+    .button_position_headerInMain {
+      align-self: flex-start; }
+    .button_position_slider {
+      margin-top: 60px; }
+    .button_position_donate {
+      margin: 45px auto 0; }
+    .button_position_testimonials {
+      margin: 25px auto 30px;
+      padding: 16px 50px; } }
 
 .progress-bar {
   min-height: 27px;

@@ -10,6 +10,7 @@
   @include font-source-sans(19px, #ffffff, 400, 23px);
   border: 1px solid rgba(#ffffff, 0.5);
   border-radius: 2px;
+  text-decoration: none;
 
   &:after {
     @include pseudo;
@@ -17,5 +18,14 @@
     width: 20px;
     height: 20px;
     bottom: 5px;
+  }
+
+  @media screen and(max-width: $laptop) {
+    &_position_header {
+      border: none;
+      @include font-source-sans(12px, #ffffff, 400, 15px);
+      padding: 0;
+      max-width: 46px;
+    }
   }
 }

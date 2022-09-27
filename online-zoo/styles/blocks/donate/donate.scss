@@ -190,11 +190,9 @@
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-          margin: 0
+      -webkit-appearance: none;
+      margin: 0;
     }
-
-
   }
 
   &__checkbox {
@@ -225,6 +223,78 @@
 
     &:last-of-type {
       margin-right: 0;
+    }
+  }
+
+  &__arrrow-container {
+    display: none;
+  }
+
+  &__green-arrrow {
+    width: 89px;
+    height: 69px;
+  }
+
+  @media screen and(max-width: $desctop) {
+    & {
+      &__wrapper {
+        padding: 25px 19px 50px 49px;
+        margin: 30px 30px 45px;
+        gap: 0;
+      }
+
+      &__title {
+        line-height: 50px;
+        margin-bottom: 15px;
+      }
+
+      &__text_big {
+        margin-bottom: 20px;
+      }
+
+      &__text_margin {
+        margin-top: 20px;
+      }
+
+      &__subtitle {
+        margin: 40px auto 40px;
+      }
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+    & {
+      &__title {
+        margin-top: 0px;
+      }
+
+      &__wrapper {
+        margin: 20px 0;
+        padding: 10px 20px 60px;
+      }
+
+      &__subtitle {
+        margin-top: 30px;
+        margin-bottom: 0;
+      }
+
+      &__slider {
+        gap: 42px;
+      }
+
+      &__slider-arrow {
+        display: none;
+      }
+
+      &__arrrow-container {
+        margin-top: -45px;
+        position: relative;
+        top: 35px;
+        display: flex;
+        justify-content: center;
+        gap: 140px;
+        z-index: 2;
+      }
     }
   }
 }

@@ -1,8 +1,9 @@
 .header {
+  box-sizing: border-box;
   max-width: $maxWidth;
   background-color: #000000;
   margin: 0 auto;
-  padding: 14px 0;
+  padding: 14px 30px;
 
   &__wrapper {
     max-width: $mainWidth;
@@ -18,5 +19,30 @@
     flex-shrink: 0;
     cursor: pointer;
     text-decoration: none;
+  }
+
+  &__button {
+    display: none;
+    min-width: 18px;
+    min-height: 12px;
+    background: url("../../../icons/burger_menu.svg") no-repeat center/cover;
+  }
+
+  @media screen and(max-width: $laptop) {
+    & {
+      padding: 2px 20px;
+    }
+
+    &__wrapper {
+      justify-content: space-between;
+    }
+
+    &__text {
+      display: none;
+    }
+
+    &__button {
+      display: block;
+    }
   }
 }

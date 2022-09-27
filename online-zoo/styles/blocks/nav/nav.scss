@@ -28,4 +28,25 @@
       cursor: default;
     }
   }
+
+  @media screen and(max-width: $desctop) {
+    &__element + &__element {
+      margin-left: 48px;
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+
+    &__element+&__element {
+        margin-left: 40px;
+      }
+
+    &_notactive {
+      display: none;
+    }
+
+    &__wrapper_position_footer {
+      padding: 0;
+    }
+  }
 }

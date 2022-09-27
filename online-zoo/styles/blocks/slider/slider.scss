@@ -38,7 +38,7 @@
       content: "";
       width: 16px;
       height: 8px;
-      background: url("../../../icons/slider/VectorToLeft.svg") no-repeat
+      background: url("../../icons/slider/VectorToLeft.svg") no-repeat
         center/cover;
     }
 
@@ -66,7 +66,7 @@
       content: "";
       width: 16px;
       height: 8px;
-      background: url("../../../icons/slider/VectorToLeft.svg") no-repeat
+      background: url("../../icons/slider/VectorToLeft.svg") no-repeat
         center/cover;
       transform: rotate(180deg);
     }
@@ -164,5 +164,45 @@
 
   &__item-icon {
     transition: $mainTransition;
+  }
+
+  @media screen and(max-width: $desctop) {
+    & {
+      padding: 70px 30px 45px;
+      background: url("../../../images/palm_foto.jpg") no-repeat bottom left/
+          196px 202px,
+        url("../../../images/strelitzia1.jpg") no-repeat bottom right/ auto
+          181px;
+
+      &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 171px;
+        padding: 15px 0;
+      }
+
+      &__button-prev,
+      &__button-next {
+        position: static;
+      }
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+    & {
+      padding-top: 40px;
+      background: url("../../../images/palm_foto.jpg") no-repeat bottom left/
+          150px 190px,
+        url("../../../images/strelitzia1.jpg") no-repeat bottom right/ auto
+          131px;
+    }
+
+    &__wrapper {
+      padding-bottom: 55px;
+    }
+
+    &__buttons {
+      gap: 40px;
+    }
   }
 }

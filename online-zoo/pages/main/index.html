@@ -13,8 +13,8 @@
 <body>
   <header class="header">
     <div class="header__wrapper">
-      <h1 onclick="location.href='./index.html';" class="logo">PetStory online</h1>
-      <nav class="nav">
+      <h1 onclick="location.href='./index.html';" class="logo logo_position_header">PetStory online</h1>
+      <nav class="nav nav_notactive">
         <ul class="nav__wrapper">
           <li class="nav__element "><a class="nav__link nav__link_active" href="./index.html">About</a></li>
           <li class="nav__element"><a class="nav__link" href="">Map</a></li>
@@ -29,6 +29,7 @@
       </nav>
       <a class="header__text" target="_blank"
         href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks">Designed by &copy;</a>
+        <button class="header__button"></button>
     </div>
   </header>
   <main class="main">
@@ -249,6 +250,10 @@
           gift to our <a class="donate__link" href="../donate/index.html" target="_blank">Emergency Support Fund</a>.
         </p>
         <p class="donate__subtitle">How it works</p>
+          <div class="donate__arrrow-container">
+            <img class="donate__green-arrrow"  src="../../icons/arrow-green.svg" alt="==>">
+            <img class="donate__green-arrrow" src="../../icons/arrow-green.svg" alt="==>">
+          </div>
         <div class="donate__slider">
           <div class="donate__slider-item">
             <div class="donate__container">
@@ -274,6 +279,7 @@
             <p class="donate__text donate__text_small donate__text_margin">Your favourite animal gets delicious dish</p>
           </div>
         </div>
+
         <a class="button button_position_donate button_borderRadius_active" href="../donate/index.html">Feed a friend
           now</a>
       </div>
@@ -459,8 +465,8 @@
             <li><a class="footer__link" href="https://www.youtube.com/" target="_blank"><img class="footer__linc-logo"
                   src="../../icons/links/youTybe.svg" alt="">YouTube</a></li>
           </ul>
-          <nav class="nav nav_inline">
-            <ul class="nav__wrapper">
+          <nav class="nav">
+            <ul class="nav__wrapper nav__wrapper_position_footer">
               <li class="nav__element "><a class="nav__link nav__link_active" href="./index.html">About</a></li>
               <li class="nav__element"><a class="nav__link" href="">Map</a></li>
               <li class="nav__element"><a class="nav__link" href="">Zoos</a></li>

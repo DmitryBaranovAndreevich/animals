@@ -61,4 +61,10 @@
     border: 1px solid #4b9200;
     color: #4b9200;
   }
+
+     @media screen and(max-width: $laptop) {
+       & {
+         display: none;
+       }
+     }
 }
