@@ -349,7 +349,8 @@ template {
     display: none;
     min-width: 18px;
     min-height: 12px;
-    background: url("../../../icons/burger_menu.svg") no-repeat center/cover; }
+    border: none;
+    background: url("../../icons/burger_menu.svg") no-repeat center/cover; }
   @media screen and (max-width: 970px) {
     .header {
       padding: 2px 20px; }
