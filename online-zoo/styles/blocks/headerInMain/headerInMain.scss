@@ -64,7 +64,6 @@
   }
 
   @media screen and(max-width: $laptop) {
-
     & {
       padding: 50px 20px 35px 20px;
     }
@@ -74,16 +73,33 @@
     }
 
     &__title {
-      max-width:  255px;
-        @include font-source-sans(54px, #ffffff, 700, 40px);
+      max-width: 255px;
+      @include font-source-sans(54px, #ffffff, 700, 40px);
+
+      &:before {
+        width: 237px;
+        height: 237px;
+        bottom: 5px;
+        right: 55px;
+      }
+    }
+  }
+
+  @media screen and(max-width: $phones) {
+    & {
+      padding: 45px 10px 40px 35px;
+
+      &__title {
+        max-width: 128px;
+        @include font-source-sans(27px, #ffffff, 700, 20px);
 
         &:before {
-          width: 237px;
-          height: 237px;
+          width: 119px;
+          height: 119px;
           bottom: 5px;
-          right: 55px;
+          right: 30px;
         }
       }
-
+    }
   }
 }

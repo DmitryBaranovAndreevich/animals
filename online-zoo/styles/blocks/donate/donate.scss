@@ -264,6 +264,9 @@
 
   @media screen and(max-width: $laptop) {
     & {
+      padding-left: 10px;
+      padding-right: 10px;
+
       &__title {
         margin-top: 0px;
       }
@@ -287,6 +290,7 @@
       }
 
       &__arrrow-container {
+        position: absolute;
         margin-top: -45px;
         position: relative;
         top: 35px;
@@ -294,6 +298,87 @@
         justify-content: center;
         gap: 140px;
         z-index: 2;
+      }
+    }
+  }
+
+  @media screen and(max-width: 630px) {
+    &__main-container {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+    }
+
+    &__arrrow-container {
+      position: absolute;
+      margin-top: 0;
+      top: 0;
+      right: 0;
+      padding-top: 170px;
+      padding-bottom:170px;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 180px;
+    }
+
+    &__slider {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    &__green-arrrow {
+      transform: rotate(90deg);
+    }
+  }
+
+  @media screen and(max-width: $phones) {
+
+    &__wrapper {
+      padding: 20px 10px 35px;
+    }
+
+    &__title {
+      @include font-source-sans(24px, #fe9013, 400, 28px);
+      margin-bottom: 10px;
+    }
+
+    &__text_big {
+      @include font-source-sans(18px, #333b41, 400, 22px);
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    &__text_midle {
+      display: none;
+    }
+
+    &__text_small {
+      display: none;
+    }
+
+    &__text_margin {
+      display: block;
+      margin-top: 5px;
+    }
+
+    &__main-container {
+      margin-top: 20px;
+      position: relative;
+      justify-content: center;
+    }
+
+    &__subtitle {
+      @include font-source-sans(24px, #333b41, 400, 28px);
+      margin-top: 20px;
+    }
+
+    &__slider-image {
+      &_zoo {
+        padding-bottom: 35px;
+      }
+
+      &_monkey {
+       margin-top: -10px;
       }
     }
   }

@@ -36,10 +36,9 @@
   }
 
   @media screen and(max-width: $laptop) {
-
-    &__element+&__element {
-        margin-left: 40px;
-      }
+    &__element + &__element {
+      margin-left: 40px;
+    }
 
     &_notactive {
       display: none;
@@ -47,6 +46,22 @@
 
     &__wrapper_position_footer {
       padding: 0;
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+
+    &__wrapper {
+      margin: 0
+    }
+
+    &__link {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &__element + &__element {
+      margin-left: 28px;
     }
   }
 }

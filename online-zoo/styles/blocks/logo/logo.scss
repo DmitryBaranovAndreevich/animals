@@ -27,5 +27,23 @@
       padding: 0;
       max-width: 46px;
     }
+
+    &:after {
+      background: url("../../../icons/bamboo.svg") no-repeat left bottom/12px
+        12px;
+    }
+  }
+
+  @media screen and(max-width: $phones) {
+    &_position_footer {
+      border: none;
+      margin: 0 auto 55px;
+      max-width: 100%;
+      &:after {
+        background: url("../../../icons/bamboo.svg") no-repeat left bottom/25px
+          25px;
+        left: 75px;
+      }
+    }
   }
 }

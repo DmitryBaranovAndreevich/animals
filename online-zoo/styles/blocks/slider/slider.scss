@@ -205,4 +205,56 @@
       gap: 40px;
     }
   }
+
+  @media screen and(max-width: 560px) {
+    & {
+      background: url("../../../images/palm_foto.jpg") no-repeat bottom left/
+          50px 75px,
+        url("../../../images/strelitzia1.jpg") no-repeat bottom right/ 70px 70px;
+      padding: 10px 10px 20px 10px;
+    }
+
+    &__wrapper {
+      padding-bottom: 40px;
+    }
+
+    &__container {
+      &_notvisible {
+        display: none;
+      }
+    }
+
+    &__buttons {
+      display: none;
+    }
+
+    &__track {
+      flex-direction: column;
+      align-items: center;
+      max-height: 1400px;
+      gap: 20px;
+    }
+
+    &__item-description {
+      padding: 8px 13px 8px;
+    }
+
+    &__item {
+      max-width: 285px;
+      margin-right: 15px;
+    }
+
+    &__item-title {
+      @include font-source-sans(12px, #000000, 500, 17px);
+    }
+
+    &__item-subtitle {
+      @include font-source-sans(11px, #000000, 300, 14px);
+    }
+
+    &__item-icon {
+      width: 25px;
+      height: 28px;
+    }
+  }
 }

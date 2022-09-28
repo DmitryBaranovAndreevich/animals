@@ -45,6 +45,10 @@
     border-radius: 20px;
     background: #f1f3f2;
 
+    &_notvisible {
+        display: none;
+      }
+
     &:after {
       @include pseudo;
       top: -2px;
@@ -104,13 +108,13 @@
   }
 
   @media screen and(max-width: $laptop) {
-
     & {
-        background: url("../../../images/leav_foto.jpg") no-repeat right 110%/ 100px 180px;
+      background: url("../../../images/leav_foto.jpg") no-repeat right 110%/ 100px
+        180px;
     }
 
     &__wrapper {
-      padding:57px 20px 50px;
+      padding: 57px 20px 50px;
     }
 
     &__title {
@@ -131,6 +135,27 @@
       max-height: 35px;
       overflow: hidden;
       margin-bottom: 0px;
+    }
+  }
+
+  @media screen and(max-width: $phones) {
+    & {
+      background: url("../../../images/leav_foto.jpg") no-repeat right 110%/ 60px
+        110px;
+    }
+
+    &__wrapper {
+      padding: 30px 10px 25px;
+    }
+
+    &__title {
+      @include font-source-sans(24px, #333b41, 400, 29px);
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    &__post {
+      min-width: 220px;
     }
   }
 }

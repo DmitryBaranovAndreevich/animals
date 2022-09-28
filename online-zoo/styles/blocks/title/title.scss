@@ -3,9 +3,13 @@
   @include font-source-sans(48px, #333b41, 400, 58px);
 
   @media screen and(max-width: $desctop) {
-     & {
+    & {
       margin-top: -10px;
       margin-bottom: 0;
-     }
     }
+  }
+
+  @media screen and(max-width: $phones) {
+    @include font-source-sans(24px, #333b41, 400, 28px);
+  }
 }

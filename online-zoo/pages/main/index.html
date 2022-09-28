@@ -29,7 +29,7 @@
       </nav>
       <a class="header__text" target="_blank"
         href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks">Designed by &copy;</a>
-        <button class="header__button"></button>
+      <button class="header__button"></button>
     </div>
   </header>
   <main class="main">
@@ -45,6 +45,9 @@
       </div>
     </section>
     <section class="description">
+      <button class="button button_position_description button_borderRadius_active" type="button">
+        wath online
+      </button>
       <div class="description__wrapper">
         <img class="description__image" src="../../images/bamboo-cap.jpg" alt="Old men" />
         <div class="description__text-container">
@@ -158,7 +161,7 @@
           <button class="slider__button-prev" type="button"></button>
           <button class="slider__button-next" type="button"></button>
         </div>
-        <div class="slider__container">
+        <div class="slider__container slider__container_notvisible">
           <div class="slider__track">
             <div class="slider__item">
               <div class="slider__image-wrapper">
@@ -250,36 +253,38 @@
           gift to our <a class="donate__link" href="../donate/index.html" target="_blank">Emergency Support Fund</a>.
         </p>
         <p class="donate__subtitle">How it works</p>
+        <div class="donate__main-container">
           <div class="donate__arrrow-container">
-            <img class="donate__green-arrrow"  src="../../icons/arrow-green.svg" alt="==>">
+            <img class="donate__green-arrrow" src="../../icons/arrow-green.svg" alt="==>">
             <img class="donate__green-arrrow" src="../../icons/arrow-green.svg" alt="==>">
           </div>
-        <div class="donate__slider">
-          <div class="donate__slider-item">
-            <div class="donate__container">
-              <img src="../../images/payment.jpg" alt="Банковская карта"
-                class="donate__slider-image donate__slider-image_payment">
+          <div class="donate__slider">
+            <div class="donate__slider-item">
+              <div class="donate__container">
+                <img src="../../images/payment.jpg" alt="Банковская карта"
+                  class="donate__slider-image donate__slider-image_payment">
+              </div>
+              <p class="donate__text donate__text_small donate__text_margin">Pay with card</p>
             </div>
-            <p class="donate__text donate__text_small donate__text_margin">Pay with card</p>
-          </div>
-          <img class="donate__slider-arrow" src="../../icons/arrow.svg">
-          <div class="donate__slider-item">
-            <div class="donate__container">
-              <img src="../../images/zoo.jpg" alt="Банковская карта"
-                class="donate__slider-image donate__slider-image_zoo">
+            <img class="donate__slider-arrow" src="../../icons/arrow.svg">
+            <div class="donate__slider-item">
+              <div class="donate__container">
+                <img src="../../images/zoo.jpg" alt="Банковская карта"
+                  class="donate__slider-image donate__slider-image_zoo">
+              </div>
+              <p class="donate__text donate__text_small donate__text_margin">Payment goes to the zoo</p>
             </div>
-            <p class="donate__text donate__text_small donate__text_margin">Payment goes to the zoo</p>
-          </div>
-          <img class="donate__slider-arrow" src="../../icons/arrow.svg">
-          <div class="donate__slider-item">
-            <div class="donate__container">
-              <img src="../../images/monkey.jpg" alt="Банковская карта"
-                class="donate__slider-image donate__slider-image_monkey">
+            <img class="donate__slider-arrow" src="../../icons/arrow.svg">
+            <div class="donate__slider-item">
+              <div class="donate__container">
+                <img src="../../images/monkey.jpg" alt="Банковская карта"
+                  class="donate__slider-image donate__slider-image_monkey">
+              </div>
+              <p class="donate__text donate__text_small donate__text_margin">Your favourite animal gets delicious dish
+              </p>
             </div>
-            <p class="donate__text donate__text_small donate__text_margin">Your favourite animal gets delicious dish</p>
           </div>
         </div>
-
         <a class="button button_position_donate button_borderRadius_active" href="../donate/index.html">Feed a friend
           now</a>
       </div>
@@ -439,45 +444,45 @@
         <button type="button" class="button button_position_testimonials">leave feedback</button>
       </div>
     </section>
-      </main>
-    <footer class="footer">
-      <div class="footer__wrapper">
-        <div class="footer__container">
-          <a href="./index.html" class="logo">PetStory online</a>
-          <form class="subscribe-form">
-            <p class="subscribe-form__text">Subscribe to our news</p>
-            <div class="subscribe-form__input-container">
-              <input type="email" placeholder="Enter your email" class="subscribe-form__input" novalidate required>
-              <button type="submit" class="subscribe-form__button subscribe-form_mistake" disabled="true"
-                no>Submit</button>
-            </div>
-          </form>
-        </div>
-        <a class="button button_position_footer" href="../donate/index.html">Feed a friend now</a>
-        <div class="footer__links-container">
-          <ul class="footer__links">
-            <li><a class="footer__link" href="https://www.facebook.com/" target="_blank"><img class="footer__linc-logo"
-                  src="../../icons/links/facebook.svg" alt="Facebook">Facebook</a></li>
-            <li><a class="footer__link" href="https://www.twitter.com/" target="_blank"><img class="footer__linc-logo"
-                  src="../../icons/links/twitter.svg" alt="">Twitter</a></li>
-            <li><a class="footer__link" href="https://www.instagram.com/" target="_blank"><img class="footer__linc-logo"
-                  src="../../icons/links/instagram.svg" alt="">Instagram</a></li>
-            <li><a class="footer__link" href="https://www.youtube.com/" target="_blank"><img class="footer__linc-logo"
-                  src="../../icons/links/youTybe.svg" alt="">YouTube</a></li>
-          </ul>
-          <nav class="nav">
-            <ul class="nav__wrapper nav__wrapper_position_footer">
-              <li class="nav__element "><a class="nav__link nav__link_active" href="./index.html">About</a></li>
-              <li class="nav__element"><a class="nav__link" href="">Map</a></li>
-              <li class="nav__element"><a class="nav__link" href="">Zoos</a></li>
-              <li class="nav__element">
-                <a class="nav__link" href="">Contact us</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <div class="footer__container">
+        <a href="./index.html" class="logo logo_position_footer">PetStory online</a>
+        <form class="subscribe-form">
+          <p class="subscribe-form__text">Subscribe to our news</p>
+          <div class="subscribe-form__input-container">
+            <input type="email" placeholder="Enter your email" class="subscribe-form__input" novalidate required>
+            <button type="submit" class="subscribe-form__button subscribe-form_mistake" disabled="true"
+              no>Submit</button>
+          </div>
+        </form>
       </div>
-    </footer>
+      <a class="button button_position_footer" href="../donate/index.html">Feed a friend now</a>
+      <div class="footer__links-container">
+        <ul class="footer__links">
+          <li><a class="footer__link" href="https://www.facebook.com/" target="_blank"><img class="footer__linc-logo"
+                src="../../icons/links/facebook.svg" alt="Facebook">Facebook</a></li>
+          <li><a class="footer__link" href="https://www.twitter.com/" target="_blank"><img class="footer__linc-logo"
+                src="../../icons/links/twitter.svg" alt="">Twitter</a></li>
+          <li><a class="footer__link" href="https://www.instagram.com/" target="_blank"><img class="footer__linc-logo"
+                src="../../icons/links/instagram.svg" alt="">Instagram</a></li>
+          <li><a class="footer__link" href="https://www.youtube.com/" target="_blank"><img class="footer__linc-logo"
+                src="../../icons/links/youTybe.svg" alt="">YouTube</a></li>
+        </ul>
+        <nav class="nav">
+          <ul class="nav__wrapper nav__wrapper_position_footer">
+            <li class="nav__element "><a class="nav__link nav__link_active" href="./index.html">About</a></li>
+            <li class="nav__element"><a class="nav__link" href="">Map</a></li>
+            <li class="nav__element"><a class="nav__link" href="">Zoos</a></li>
+            <li class="nav__element">
+              <a class="nav__link" href="">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

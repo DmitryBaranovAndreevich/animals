@@ -1,9 +1,13 @@
+
+
 const form = document.querySelector(".subscribe-form");
 const input = form.querySelector(".subscribe-form__input");
 const button = form.querySelector(".subscribe-form__button");
-button.addEventListener('click' , () => {
-  console.log('sds')
-})
+button.addEventListener("click", () => {
+  console.log("sds");
+});
+
+
 
 const showInputError = (element) => {
   element.classList.add("subscribe-form_mistake");
@@ -16,7 +20,7 @@ const hideInputError = (element) => {
 };
 
 const isValid = () => {
-  if(!input.validity.valid) {
+  if (!input.validity.valid) {
     showInputError(input);
     showInputError(button);
     button.setAttribute("disabled", "true");
@@ -25,13 +29,13 @@ const isValid = () => {
     hideInputError(button);
     button.removeAttribute("disabled");
   }
-}
+};
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault()
-})
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
 
-form.addEventListener('input', isValid)
+form.addEventListener("input", isValid);
 
 let position = 0;
 let showElements = 3;
@@ -39,8 +43,8 @@ const scrolElements = 2;
 
 const slider = document.querySelector(".slider");
 const container = slider.querySelector(".slider__container");
- if (container.clientWidth < 800) showElements = 2;
- if (container.clientWidth > 800) showElements = 3;
+if (container.clientWidth < 800) showElements = 2;
+if (container.clientWidth > 800) showElements = 3;
 const tracks = slider.querySelectorAll(".slider__track");
 const items = slider.querySelectorAll(".slider__item");
 const btnPrev = slider.querySelector(".slider__button-prev");
@@ -49,70 +53,39 @@ const itemWidth =
   (container.clientWidth - 30 * (showElements - 1)) / showElements;
 const movePosition = scrolElements * itemWidth + 30 * scrolElements;
 const testimonals = document.querySelector(".testimonials");
+const posts = testimonals.querySelectorAll(".testimonials__post");
 
 
-setWidth();
-check();
-setPosts();
-
-window.addEventListener('resize', () => {
-   tracks.forEach((track) => {
-     track.style.transform = `translateX(0)`;
-   });
+window.addEventListener("resize", () => {
+  tracks.forEach((track) => {
+    track.style.transform = `translateX(0)`;
+  });
   position = 0;
   cardWidth = container.clientWidth;
   if (container.clientWidth < 800) showElements = 2;
-   if (container.clientWidth > 800) showElements = 3;
+  if (container.clientWidth > 800) showElements = 3;
   setWidth();
   check();
-  if(testimonals.clientWidth < 950) {setPostsNone()}
-})
-
-function setPostsNone() {
-  const posts = testimonals.querySelectorAll(".testimonials__post");
-  for (let i = 3; i < posts.length; i++) {
-    posts[i].style.display = `none`;
-  }
-}
-
-function setWidth() {
-  const itemWidth =
-    (container.clientWidth - 30 * (showElements - 1)) / showElements;
-  items.forEach((item) => {
-    item.style.minWidth = `${itemWidth}px`;
-    const image = item.querySelector(".slider__item-image");
-    const koff = container.clientWidth > 800 ? 0.321 : 0.446;
-    image.style.maxWidth = `${itemWidth - 2}px`;
-    image.style.maxHeight = `${itemWidth}px`;
-  });
-}
-
-function check() {
-  const itemWidth =
-    (container.clientWidth - 30 * (showElements - 1)) / showElements;
-  if (position >= 0) {
-    btnPrev.setAttribute("disabled", true);
+  if (testimonals.clientWidth < 950) {
+    console.log('uiui')
+    setPostsNone();
   } else {
-    btnPrev.removeAttribute("disabled");
+    setPostVisible()
   }
-  if (position <= -itemWidth * ((items.length) / 2 - showElements)) {
-    btnNext.setAttribute("disabled", true);
-  } else {
-    btnNext.removeAttribute("disabled");
-  }
-}
+});
 
 btnNext.onclick = function () {
   const itemWidth =
     (container.clientWidth - 30 * (showElements - 1)) / showElements;
   const movePosition = scrolElements * itemWidth + 30 * scrolElements;
-  const itemsLeft =
-    Math.ceil(items.length / 2 -
-    (Math.abs(position) + showElements * itemWidth) / itemWidth);
+  const itemsLeft = Math.ceil(
+    items.length / 2 -
+      (Math.abs(position) + showElements * itemWidth) / itemWidth
+  );
   position -=
     itemsLeft > scrolElements
       ? movePosition
-      : itemsLeft * itemWidth + 30 * itemsLeft;;
+      : itemsLeft * itemWidth + 30 * itemsLeft;
 
   tracks.forEach((track) => {
     track.style.transform = `translateX(${position}px)`;
@@ -130,5 +103,56 @@ btnPrev.onclick = function () {
   });
   check();
 };
+
+if (testimonals.clientWidth < 950) {
+  setPostsNone();
+} else {
+  setPostVisible();
+}
+
+setWidth();
+check();
+setPosts();
+
+
+console.log(posts)
+function setPostsNone() {
+  for (let i = 3; i < posts.length; i++) {
+    posts[i].classList.add("testimonials__post_notvisible");
+  }
+}
+function setPostVisible() {
+   for (let i = 0; i < posts.length; i++) {
+     posts[i].classList.remove("testimonials__post_notvisible");
+   }
+}
+
+function setWidth() {
+  let itemWidth =
+    (container.clientWidth - 30 * (showElements - 1)) / showElements;
+
+    if(container.clientWidth < 483) itemWidth = 285;
+  items.forEach((item) => {
+    item.style.minWidth = `${itemWidth}px`;
+    const image = item.querySelector(".slider__item-image");
+    image.style.maxWidth = `${itemWidth - 2}px`;
+    image.style.maxHeight = `${itemWidth}px`;
+  });
+}
+
+function check() {
+  const itemWidth =
+    (container.clientWidth - 30 * (showElements - 1)) / showElements;
+  if (position >= 0) {
+    btnPrev.setAttribute("disabled", true);
+  } else {
+    btnPrev.removeAttribute("disabled");
+  }
+  if (position <= -itemWidth * (items.length / 2 - showElements)) {
+    btnNext.setAttribute("disabled", true);
+  } else {
+    btnNext.removeAttribute("disabled");
+  }
+}
 
 
