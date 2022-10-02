@@ -33,6 +33,7 @@ function addHiddenClass() {
 
 function addSmallLineClass() {
  const firstEl  = checkBoxContainers.find(el => !el.classList.contains('progress-bar__container_hidden'));
+ firstEl.classList.add("progress-bar__container_smallWidth");
  const firstLine = firstEl.querySelector(".progress-bar__line");
  firstLine.classList.add("progress-bar__line_hidden");
 }
@@ -41,6 +42,7 @@ function removeSmallLineClass() {
   const notHiddenEl = checkBoxContainers.filter(
     (el) => !el.classList.contains("progress-bar__container_hidden")
   );
+  notHiddenEl[1].classList.remove("progress-bar__container_smallWidth");
   const firstLine = notHiddenEl[1].querySelector(".progress-bar__line");
   firstLine.classList.remove("progress-bar__line_hidden");
 }
@@ -56,6 +58,7 @@ function removeHiddenClas() {
   }
 }
 
+
 function setElements() {
   const wrapperWidtch = wrapper.clientWidth;
     const notHiddenEl = checkBoxContainers.filter(
@@ -64,7 +67,7 @@ function setElements() {
       const firstLine = notHiddenEl[0].querySelector(".progress-bar__line");
       firstLine.classList.add("progress-bar__line_hidden");
     const size = wrapperWidtch / notHiddenEl.length;
-     if (size < 135) {
+     if (size < 125) {
       addHiddenClass();
       setElements()}
 }
@@ -78,11 +81,11 @@ window.addEventListener('resize' , () => {
   );
   const size = wrapperWidtch / notHiddenEl.length;
   console.log(size)
-  if(size < 135) {
+  if(size < 125) {
     addHiddenClass();
     addSmallLineClass();
   }
-  if(size > 145) {
+  if(size > 135) {
     removeHiddenClas();
     removeSmallLineClass();
   }

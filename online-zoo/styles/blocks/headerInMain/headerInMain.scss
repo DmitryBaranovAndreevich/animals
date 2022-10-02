@@ -66,6 +66,11 @@
   @media screen and(max-width: $laptop) {
     & {
       padding: 50px 20px 35px 20px;
+
+      &_positon_donate {
+        box-sizing: border-box;
+        min-height: 335px;
+      }
     }
 
     &__wrapper {

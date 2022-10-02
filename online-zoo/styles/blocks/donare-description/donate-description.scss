@@ -16,4 +16,14 @@
     @include font-source-sans(36px, #FE9013, 400, 47px);
       margin: 0;
   }
+
+    @media screen and(max-width: $desctop) {
+      & {
+        margin: 0 30px;
+      }
+
+      &__title {
+        margin-bottom: 35px;
+      }
+    }
 }

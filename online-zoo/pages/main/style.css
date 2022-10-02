@@ -515,6 +515,9 @@ template {
   @media screen and (max-width: 970px) {
     .headerInMain {
       padding: 50px 20px 35px 20px; }
+      .headerInMain_positon_donate {
+        box-sizing: border-box;
+        min-height: 335px; }
     .headerInMain__wrapper {
       gap: 0; }
     .headerInMain__title {
@@ -594,7 +597,9 @@ template {
     .button_position_donate {
       margin: 75px auto 0; }
     .button_position_testimonials {
-      margin-top: 55px; } }
+      margin-top: 55px; }
+    .button_smallMarginTop {
+      margin-top: 25px; } }
   @media screen and (max-width: 970px) {
     .button_position_headerInMain {
       align-self: flex-start; }
@@ -1091,10 +1096,15 @@ template {
     width: 89px;
     height: 69px; }
   @media screen and (max-width: 1300px) {
+    .donate_paddinBottom {
+      padding-bottom: 0; }
     .donate__wrapper {
       padding: 25px 19px 50px 49px;
       margin: 30px 30px 45px;
       gap: 0; }
+      .donate__wrapper_position_donate {
+        padding-top: 30px;
+        padding-right: 30px; }
     .donate__title {
       line-height: 50px;
       margin-bottom: 15px; }
@@ -1103,7 +1113,12 @@ template {
     .donate__text_margin {
       margin-top: 20px; }
     .donate__subtitle {
-      margin: 40px auto 40px; } }
+      margin: 40px auto 40px; }
+    .donate__widget {
+      margin-top: 110px; }
+    .donate__wrapper_position_donate {
+      margin-bottom: 30px;
+      padding-bottom: 40px; } }
   @media screen and (max-width: 970px) {
     .donate {
       padding-left: 10px;
@@ -1363,6 +1378,8 @@ template {
   @media screen and (max-width: 1300px) {
     .footer__wrapper {
       padding: 41px 40px 50px; }
+      .footer__wrapper_position_donate {
+        padding-right: 60px; }
     .footer__links {
       max-width: 230px; } }
   @media screen and (max-width: 970px) {
