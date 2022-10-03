@@ -2,6 +2,7 @@ const progresBar = document.querySelector(".progress-bar");
 const radioButtons = progresBar.querySelectorAll(".progress-bar__elipse");
 const prices = progresBar.querySelectorAll(".progress-bar__text");
 const wrapper = document.querySelector(".donate__wrapper");
+const header = document.querySelector(".header");
 
 function resetColorText() {
   for (const text of prices) {
@@ -100,6 +101,15 @@ window.addEventListener("resize", () => {
     removeSmallLineClass();
      setElements();
   }
+});
+
+window.addEventListener("scroll", function () {
+  let dist = 0;
+  dist += this.window.scrollY;
+  if (window.screen.width <= 970 && dist > 10)
+    header.classList.add("header_fix");
+  if (window.screen.width > 970 || dist < 10)
+    header.classList.remove("header_fix");
 });
 
 const form = document.querySelector(".subscribe-form");

@@ -329,6 +329,9 @@ template {
   background-color: #000000;
   margin: 0 auto;
   padding: 14px 30px; }
+  .header_fix {
+    position: fixed;
+    z-index: 3; }
   .header__wrapper {
     max-width: 1160px;
     margin: 0 auto;

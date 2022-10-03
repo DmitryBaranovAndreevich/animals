@@ -5,6 +5,11 @@
   margin: 0 auto;
   padding: 14px 30px;
 
+  &_fix {
+    position: fixed;
+    z-index: 3;
+  }
+
   &__wrapper {
     max-width: $mainWidth;
     margin: 0 auto;
@@ -31,7 +36,6 @@
 
   @media screen and(max-width: $laptop) {
     & {
-      // position: fixed;
       width: 100%;
       padding: 2px 20px;
     }
