@@ -1,8 +1,8 @@
 .slider {
   padding: 0 150px;
-  background: url("../../../images/palm_foto.jpg") no-repeat bottom left/ auto
+  background: url("../../images/palm_foto.jpg") no-repeat bottom left/ auto
       460px,
-    url("../../../images/strelitzia1.jpg") no-repeat bottom right/ auto 275px;
+    url("../../images/strelitzia1.jpg") no-repeat bottom right/ auto 275px;
 
   &__wrapper {
     position: relative;
@@ -169,9 +169,9 @@
   @media screen and(max-width: $desctop) {
     & {
       padding: 70px 30px 45px;
-      background: url("../../../images/palm_foto.jpg") no-repeat bottom left/
+      background: url("../../images/palm_foto.jpg") no-repeat bottom left/
           196px 202px,
-        url("../../../images/strelitzia1.jpg") no-repeat bottom right/ auto
+        url("../../images/strelitzia1.jpg") no-repeat bottom right/ auto
           181px;
 
       &__buttons {
@@ -191,9 +191,9 @@
   @media screen and(max-width: $laptop) {
     & {
       padding-top: 40px;
-      background: url("../../../images/palm_foto.jpg") no-repeat bottom left/
+      background: url("../../images/palm_foto.jpg") no-repeat bottom left/
           150px 190px,
-        url("../../../images/strelitzia1.jpg") no-repeat bottom right/ auto
+        url("../../images/strelitzia1.jpg") no-repeat bottom right/ auto
           131px;
     }
 
@@ -208,9 +208,9 @@
 
   @media screen and(max-width: 560px) {
     & {
-      background: url("../../../images/palm_foto.jpg") no-repeat bottom left/
+      background: url("../../images/palm_foto.jpg") no-repeat bottom left/
           50px 75px,
-        url("../../../images/strelitzia1.jpg") no-repeat bottom right/ 70px 70px;
+        url("../../images/strelitzia1.jpg") no-repeat bottom right/ 70px 70px;
       padding: 10px 10px 20px 10px;
     }
 

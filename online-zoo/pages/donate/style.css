@@ -401,7 +401,7 @@ template {
       padding: 0;
       max-width: 46px; }
     .logo:after {
-      background: url("../../../icons/bamboo.svg") no-repeat left bottom/12px 12px; } }
+      background: url("../../icons/bamboo.svg") no-repeat left bottom/12px 12px; } }
   @media screen and (max-width: 480px) {
     .logo_position_footer {
       border: none;
@@ -704,7 +704,7 @@ template {
     padding: 16px 9px;
     background-color: transparent;
     border: 1px solid #929699;
-    background: url("../../../icons/dollar.svg") no-repeat 95%;
+    background: url("../../icons/dollar.svg") no-repeat 95%;
     border-radius: 2px; }
     .donate__input::placeholder {
       font-family: "Roboto", "Arial", sans-serif;

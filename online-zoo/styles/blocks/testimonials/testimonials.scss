@@ -1,7 +1,7 @@
 .testimonials {
   max-width: $maxWidth;
   margin: 0 auto;
-  background: url("../../../images/leav_foto.jpg") no-repeat right 110%/ 260px 330px;
+  background: url("../../images/leav_foto.jpg") no-repeat right 110%/ 260px 330px;
 
   &__wrapper {
     max-width: $mainWidth;
@@ -89,7 +89,7 @@
 
   @media screen and(max-width: $desctop) {
     & {
-      background: url("../../../images/leav_foto.jpg") no-repeat right 110%/ 200px
+      background: url("../../images/leav_foto.jpg") no-repeat right 110%/ 200px
         290px;
 
       &__wrapper {
@@ -109,7 +109,7 @@
 
   @media screen and(max-width: $laptop) {
     & {
-      background: url("../../../images/leav_foto.jpg") no-repeat right 110%/ 100px
+      background: url("../../images/leav_foto.jpg") no-repeat right 110%/ 100px
         180px;
     }
 
@@ -140,7 +140,7 @@
 
   @media screen and(max-width: $phones) {
     & {
-      background: url("../../../images/leav_foto.jpg") no-repeat right 110%/ 60px
+      background: url("../../images/leav_foto.jpg") no-repeat right 110%/ 60px
         110px;
     }
 

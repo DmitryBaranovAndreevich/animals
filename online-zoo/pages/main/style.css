@@ -401,7 +401,7 @@ template {
       padding: 0;
       max-width: 46px; }
     .logo:after {
-      background: url("../../../icons/bamboo.svg") no-repeat left bottom/12px 12px; } }
+      background: url("../../icons/bamboo.svg") no-repeat left bottom/12px 12px; } }
   @media screen and (max-width: 480px) {
     .logo_position_footer {
       border: none;
@@ -635,7 +635,7 @@ template {
   padding: 140px 0 180px;
   max-width: 1600px;
   margin: 0 auto;
-  background: url("../../../images/flower_foto1.jpg") no-repeat 100% 10%; }
+  background: url("../../images/flower_foto1.jpg") no-repeat 100% 10%; }
   .description__wrapper {
     max-width: 1160px;
     margin: 0 auto;
@@ -669,7 +669,7 @@ template {
     .description {
       padding-top: 70px;
       padding-bottom: 40px;
-      background: url("../../../images/flower_foto1.jpg") no-repeat 100% 10%/130px 476px; }
+      background: url("../../images/flower_foto1.jpg") no-repeat 100% 10%/130px 476px; }
       .description__wrapper {
         max-width: 495px;
         margin-left: 0;
@@ -682,7 +682,7 @@ template {
       padding-top: 20px;
       padding-left: 10px;
       padding-right: 10px;
-      background: url("../../../images/flower_foto2.jpg") no-repeat 100% 15%/35px 216px; }
+      background: url("../../images/flower_foto2.jpg") no-repeat 100% 15%/35px 216px; }
       .description__wrapper {
         padding-top: 43px; }
       .description__text-container {
@@ -735,7 +735,7 @@ template {
 
 .slider {
   padding: 0 150px;
-  background: url("../../../images/palm_foto.jpg") no-repeat bottom left/auto 460px, url("../../../images/strelitzia1.jpg") no-repeat bottom right/auto 275px; }
+  background: url("../../images/palm_foto.jpg") no-repeat bottom left/auto 460px, url("../../images/strelitzia1.jpg") no-repeat bottom right/auto 275px; }
   .slider__wrapper {
     position: relative;
     max-width: 1160px;
@@ -861,7 +861,7 @@ template {
   @media screen and (max-width: 1300px) {
     .slider {
       padding: 70px 30px 45px;
-      background: url("../../../images/palm_foto.jpg") no-repeat bottom left/196px 202px, url("../../../images/strelitzia1.jpg") no-repeat bottom right/auto 181px; }
+      background: url("../../images/palm_foto.jpg") no-repeat bottom left/196px 202px, url("../../images/strelitzia1.jpg") no-repeat bottom right/auto 181px; }
       .slider__buttons {
         display: flex;
         justify-content: center;
@@ -872,14 +872,14 @@ template {
   @media screen and (max-width: 970px) {
     .slider {
       padding-top: 40px;
-      background: url("../../../images/palm_foto.jpg") no-repeat bottom left/150px 190px, url("../../../images/strelitzia1.jpg") no-repeat bottom right/auto 131px; }
+      background: url("../../images/palm_foto.jpg") no-repeat bottom left/150px 190px, url("../../images/strelitzia1.jpg") no-repeat bottom right/auto 131px; }
     .slider__wrapper {
       padding-bottom: 55px; }
     .slider__buttons {
       gap: 40px; } }
   @media screen and (max-width: 560px) {
     .slider {
-      background: url("../../../images/palm_foto.jpg") no-repeat bottom left/50px 75px, url("../../../images/strelitzia1.jpg") no-repeat bottom right/70px 70px;
+      background: url("../../images/palm_foto.jpg") no-repeat bottom left/50px 75px, url("../../images/strelitzia1.jpg") no-repeat bottom right/70px 70px;
       padding: 10px 10px 20px 10px; }
     .slider__wrapper {
       padding-bottom: 40px; }
@@ -1066,7 +1066,7 @@ template {
     padding: 16px 9px;
     background-color: transparent;
     border: 1px solid #929699;
-    background: url("../../../icons/dollar.svg") no-repeat 95%;
+    background: url("../../icons/dollar.svg") no-repeat 95%;
     border-radius: 2px; }
     .donate__input::placeholder {
       font-family: "Roboto", "Arial", sans-serif;
@@ -1330,7 +1330,7 @@ template {
 .testimonials {
   max-width: 1600px;
   margin: 0 auto;
-  background: url("../../../images/leav_foto.jpg") no-repeat right 110%/260px 330px; }
+  background: url("../../images/leav_foto.jpg") no-repeat right 110%/260px 330px; }
   .testimonials__wrapper {
     max-width: 1160px;
     margin: 0 auto;
@@ -1407,7 +1407,7 @@ template {
     line-height: 18px; }
   @media screen and (max-width: 1300px) {
     .testimonials {
-      background: url("../../../images/leav_foto.jpg") no-repeat right 110%/200px 290px; }
+      background: url("../../images/leav_foto.jpg") no-repeat right 110%/200px 290px; }
       .testimonials__wrapper {
         padding: 100px 25px 140px; }
       .testimonials__post {
@@ -1417,7 +1417,7 @@ template {
         margin-bottom: 35px; } }
   @media screen and (max-width: 970px) {
     .testimonials {
-      background: url("../../../images/leav_foto.jpg") no-repeat right 110%/100px 180px; }
+      background: url("../../images/leav_foto.jpg") no-repeat right 110%/100px 180px; }
     .testimonials__wrapper {
       padding: 57px 20px 50px; }
     .testimonials__title {
@@ -1434,7 +1434,7 @@ template {
       margin-bottom: 0px; } }
   @media screen and (max-width: 480px) {
     .testimonials {
-      background: url("../../../images/leav_foto.jpg") no-repeat right 110%/60px 110px; }
+      background: url("../../images/leav_foto.jpg") no-repeat right 110%/60px 110px; }
     .testimonials__wrapper {
       padding: 30px 10px 35px; }
     .testimonials__title {
