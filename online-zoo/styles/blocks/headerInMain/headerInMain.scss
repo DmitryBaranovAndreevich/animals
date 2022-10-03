@@ -94,6 +94,10 @@
     & {
       padding: 45px 10px 40px 35px;
 
+      &_positon_donate {
+        min-height: 190px;
+      }
+
       &__title {
         max-width: 128px;
         @include font-source-sans(27px, #ffffff, 700, 20px);

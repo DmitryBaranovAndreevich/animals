@@ -77,9 +77,14 @@
     }
 
     &__links-container {
-      margin-top: 80px;
+      margin-top: 100px;
       flex-direction: row-reverse;
       justify-content: space-between;
+
+      &_position_donate {
+        margin-top: 100px;
+
+      }
     }
 
     &__links {

@@ -91,6 +91,10 @@
       margin: 25px auto 30px;
       padding: 16px 50px;
     }
+
+    &_smallMarginTop {
+      margin-top: 35px;
+    }
   }
 
   @media screen and(max-width: $phones) {
@@ -108,5 +112,14 @@
       margin-top: 10px;
       padding: 16px 55px;
     }
+
+    &_position_donate {
+      margin-top: 25px;
+    }
+
+         &_position_testimonials {
+          margin-top: 10px;
+          padding: 17px 55px;
+         }
   }
 }

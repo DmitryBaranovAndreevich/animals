@@ -241,8 +241,12 @@
         padding-bottom: 0;
       }
 
+      &__main-container {
+        margin-right: 15px;
+      }
+
       &__wrapper {
-        padding: 25px 19px 50px 49px;
+        padding: 30px 19px 50px 49px;
         margin: 30px 30px 45px;
         gap: 0;
 
@@ -254,7 +258,7 @@
 
       &__title {
         line-height: 50px;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
       }
 
       &__text_big {
@@ -270,7 +274,11 @@
       }
 
       &__widget {
-        margin-top: 110px;
+        margin-top: 100px;
+      }
+
+      &__widget-text {
+        margin-left: 20px;
       }
 
       &__wrapper_position_donate {
@@ -282,16 +290,60 @@
 
   @media screen and(max-width: $laptop) {
     & {
-      padding-left: 10px;
-      padding-right: 10px;
+      // padding-left: 10px;
+      // padding-right: 10px;
 
       &__title {
         margin-top: 0px;
+        @include font-source-sans(42px, #fe9013, 400, 50px);
+
+        &_smallMarginBottom {
+          margin-bottom: 30px;
+        }
       }
+
+      &__text {
+
+        &_big {
+          @include font-source-sans(21px, #333B41, 400, 26px);
+        }
+
+        // &_margin {
+        //   margin-left: 45px;
+        //   margin-right: 35px;
+        //   text-align: center;
+        // }
+
+        &_bigmargin {
+          margin-top: 30px;
+        }
+      }
+             &__slider-image {
+
+               &_payment {
+                 max-width: 108px;
+                 padding: 54px 28px;
+               }
+
+               &_zoo {
+                 max-width: 86px;
+                 padding: 38px 38px;
+               }
+
+               &_monkey {
+                 max-width: 125px;
+                 padding: 48px 19px;
+               }
+             }
 
       &__wrapper {
         margin: 20px 0;
         padding: 10px 20px 60px;
+
+        &_position_donate {
+          padding: 30px 0 25px;
+          margin: 30px 10px 45px;
+        }
       }
 
       &__subtitle {
@@ -309,7 +361,7 @@
 
       &__arrrow-container {
         position: absolute;
-        margin-top: -45px;
+        margin-top: -55px;
         position: relative;
         top: 35px;
         display: flex;
@@ -317,10 +369,39 @@
         gap: 140px;
         z-index: 2;
       }
+
+      &__widget {
+        margin-top: 100px;
+      }
+
+      &__widget-text {
+        margin: 40px 10px 0;
+
+        &_margin_small {
+          margin-top: 10px;
+          margin-left: 15px;
+        }
+      }
+
+      &__input {
+        max-width: 148px;
+        padding: 10px 30px 15px 6px;
+      }
+
+      &__checkbox {
+        margin-right: 20px;
+      }
     }
   }
 
   @media screen and(max-width: 630px) {
+    &__wrapper_position_donate {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     &__main-container {
       display: flex;
       flex-direction: row-reverse;
@@ -347,20 +428,87 @@
     &__green-arrrow {
       transform: rotate(90deg);
     }
+
+    &__widget {
+      position: static;
+      width: 100%;
+      margin-top: 40px;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    &__widget-animals {
+      max-width: 151px;
+      max-height: 111px;
+      margin-left: 0;
+      margin-right: 10px;
+    }
+
+    &__title {
+      &_smallMarginBottom {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__text_margin {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &__widget-number {
+      margin: 0;
+      @include font-source-sans(41px, #000000, 400, 32px);
+    }
+
+    &__widget-text {
+      margin: 0;
+    }
+
+    &__widget-text_margin_small {
+      @include font-source-sans(9px, #000000, 400, 13px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &__widget-multiplay {
+      position: relative;
+      bottom: 10px;
+      right: 10px;
+      width: 8px;
+      height: 8px;
+    }
+
+    &__input {
+      margin-top: 30px;
+    }
   }
 
   @media screen and(max-width: $phones) {
+
     &__wrapper {
-      padding: 20px 10px 35px;
+      margin: 20px 10px;
+      padding: 20px 10px 55px;
+
+      &_position_donate {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 20px;
+        margin-bottom: 15px;
+        margin-top: 30px
+      }
     }
 
     &__title {
       @include font-source-sans(24px, #fe9013, 400, 28px);
       margin-bottom: 10px;
+
+      &_smallMarginBottom {
+        margin-bottom: 15px;
+      }
     }
 
     &__text_big {
-      @include font-source-sans(18px, #333b41, 400, 22px);
+      @include font-source-sans(17px, #333b41, 400, 22px);
       text-align: center;
       margin-bottom: 0;
     }
@@ -370,12 +518,19 @@
     }
 
     &__text_small {
+      @include font-source-sans(16px, #333b41, 400, 22px);
       display: none;
     }
 
     &__text_margin {
+      @include font-source-sans(16px, #333b41, 400, 22px);
       display: block;
       margin-top: 5px;
+    }
+
+    &__text_bigmargin {
+      @include font-source-sans(15px, #333b41, 400, 22px);
+      display: block;
     }
 
     &__main-container {
