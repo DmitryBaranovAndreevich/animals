@@ -55,6 +55,8 @@ const movePosition = scrolElements * itemWidth + 30 * scrolElements;
 const testimonals = document.querySelector(".testimonials");
 const posts = testimonals.querySelectorAll(".testimonials__post");
 const header = document.querySelector('.header');
+const main = document.querySelector('.main');
+
 
 window.addEventListener("resize", () => {
   tracks.forEach((track) => {
@@ -76,10 +78,14 @@ window.addEventListener("resize", () => {
 window.addEventListener("scroll", function () {
   let dist = 0;
   dist += this.window.scrollY;
-  if (window.screen.width <= 970 && dist > 10)
+  if (window.screen.width <= 970 && dist > 0){
     header.classList.add("header_fix");
-  if (window.screen.width > 970 || dist < 10)
+    main.style.marginTop = `${header.clientHeight}px`;
+  }
+  if (window.screen.width > 970 || dist == 0) {
     header.classList.remove("header_fix");
+    main.style.marginTop = 0;
+  }
 });
 
 btnNext.onclick = function () {

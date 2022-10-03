@@ -3,6 +3,7 @@ const radioButtons = progresBar.querySelectorAll(".progress-bar__elipse");
 const prices = progresBar.querySelectorAll(".progress-bar__text");
 const wrapper = document.querySelector(".donate__wrapper");
 const header = document.querySelector(".header");
+const main = document.querySelector(".main");
 
 function resetColorText() {
   for (const text of prices) {
@@ -63,7 +64,6 @@ function removeHiddenClass() {
 
 function setElements() {
   const wrapperWidtch = wrapper.clientWidth;
-  console.log(wrapperWidtch);
   const notHiddenEl = checkBoxContainers.filter(
     (el) => !el.classList.contains("progress-bar__container_hidden")
   );
@@ -106,10 +106,14 @@ window.addEventListener("resize", () => {
 window.addEventListener("scroll", function () {
   let dist = 0;
   dist += this.window.scrollY;
-  if (window.screen.width <= 970 && dist > 10)
+  if (window.screen.width <= 970 && dist > 0) {
     header.classList.add("header_fix");
-  if (window.screen.width > 970 || dist < 10)
+    main.style.marginTop = `${header.clientHeight}px`;
+  }
+  if (window.screen.width > 970 || dist == 0) {
     header.classList.remove("header_fix");
+    main.style.marginTop = 0;
+  }
 });
 
 const form = document.querySelector(".subscribe-form");

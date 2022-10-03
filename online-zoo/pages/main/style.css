@@ -330,6 +330,7 @@ template {
   margin: 0 auto;
   padding: 14px 30px; }
   .header_fix {
+    margin-top: -34px;
     position: fixed;
     z-index: 3; }
   .header__wrapper {
