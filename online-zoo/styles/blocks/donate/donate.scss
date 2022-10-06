@@ -27,6 +27,10 @@
     }
   }
 
+  &__main-container {
+    position: relative;
+  }
+
   &__title {
     @include font-source-sans(48px, #fe9013, 400, 58px);
     margin: 0 auto 35px;

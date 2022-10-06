@@ -43,43 +43,6 @@ let images = [
   },
 ];
 
-
-const form = document.querySelector(".subscribe-form");
-const input = form.querySelector(".subscribe-form__input");
-const button = form.querySelector(".subscribe-form__button");
-button.addEventListener("click", () => {
-  console.log("sds");
-});
-
-
-
-const showInputError = (element) => {
-  element.classList.add("subscribe-form_mistake");
-  element.classList.remove("subscribe-form_valid");
-};
-
-const hideInputError = (element) => {
-  element.classList.remove("subscribe-form_mistake");
-  element.classList.add("subscribe-form_valid");
-};
-
-const isValid = () => {
-  if (!input.validity.valid) {
-    showInputError(input);
-    showInputError(button);
-    button.setAttribute("disabled", "true");
-  } else {
-    hideInputError(input);
-    hideInputError(button);
-    button.removeAttribute("disabled");
-  }
-};
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
-
-form.addEventListener("input", isValid);
 const sliders = document.querySelectorAll(".slider__track");
 
 let position = 0;
@@ -96,8 +59,6 @@ let scrolElements = showElements;
 let itemWidth =
   (container.clientWidth - 30 * (showElements - 1)) / showElements;
 const movePosition = scrolElements * itemWidth + 30 * scrolElements;
-// const testimonals = document.querySelector(".testimonials");
-// const posts = testimonals.querySelectorAll(".testimonials__post");
 const header = document.querySelector('.header');
 const main = document.querySelector('.main');
 const templateSlider = document.querySelector("#teplate-slider").content;
@@ -135,6 +96,7 @@ function addItemPrependSlider(slider) {
 }
 
 function initalsPrepend() {
+
   position = -(itemWidth + 30) * (images.length) + 1;
   for (const track of sliders) {
     addItemPrependSlider(track);
@@ -144,6 +106,7 @@ function initalsPrepend() {
     setTimeout(() => (track.style.transition = "2s"), 50);
   }
 scrollingEltoLeft += images.length;
+
 }
 
 function initals() {
@@ -157,7 +120,8 @@ window.addEventListener("resize", () => {
     if (container.clientWidth < 800) showElements = 2;
     if (container.clientWidth > 800) showElements = 3;
     itemWidth =  setWidth();
-    position = itemWidth == 285?0: -(itemWidth + 30) * showElements;
+    position =
+      container.clientWidth <= 560 ? 0 : -(itemWidth + 30) * showElements;
     scrollingEltoLeft = showElements;
   tracks.forEach((track) => {
     track.style.transform = `translateX(${position}px)`;
@@ -205,8 +169,8 @@ function deleteItemsToRight() {
     }
   });
 }
-if (position >= 0) {
-  initalsPrepend()
+if (position >= 0 && container.clientWidth > 560) {
+  initalsPrepend();
 }
 
 
@@ -261,15 +225,7 @@ function left() {
 
 btnPrev.onclick = left;
 
-if (testimonals.clientWidth < 950) {
-  setPostsNone();
-} else {
-  setPostVisible();
-}
-
 setWidth();
-// setPosts();
-
 
 function setWidth() {
   const items = slider.querySelectorAll(".slider__item");
@@ -284,20 +240,3 @@ function setWidth() {
   });
   return itemWidth
 }
-
-// function check() {
-//   const itemWidth =
-//     (container.clientWidth - 30 * (showElements - 1)) / showElements;
-//   if (position >= 0) {
-//     btnPrev.setAttribute("disabled", true);
-//   } else {
-//     btnPrev.removeAttribute("disabled");
-//   }
-//   if (position <= -itemWidth * (items.length / 2 - showElements)) {
-//     btnNext.setAttribute("disabled", true);
-//   } else {
-//     btnNext.removeAttribute("disabled");
-//   }
-// }
-
-

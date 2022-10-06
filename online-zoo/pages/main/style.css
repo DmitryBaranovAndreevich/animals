@@ -354,7 +354,11 @@ template {
     min-width: 18px;
     min-height: 12px;
     border: none;
-    background: url("../../icons/burger_menu.svg") no-repeat center/cover; }
+    background: url("../../icons/burger_menu.svg") no-repeat center/cover;
+    transition: 0.3s; }
+    .header__button:hover {
+      cursor: pointer;
+      opacity: 0.6; }
   @media screen and (max-width: 970px) {
     .header {
       width: 100%;
@@ -363,6 +367,10 @@ template {
       justify-content: space-between; }
     .header__text {
       display: none; }
+      .header__text_position_popup {
+        display: block;
+        color: #000000;
+        margin-top: 10px; }
     .header__button {
       display: block; } }
   @media screen and (max-width: 480px) {
@@ -394,6 +402,12 @@ template {
     width: 20px;
     height: 20px;
     bottom: 5px; }
+  .logo_position_popup {
+    color: #fe9013;
+    border-color: #fe9013;
+    margin-bottom: 31px; }
+    .logo_position_popup:after {
+      background: url("../../../icons/bamboo-orange.svg") no-repeat center/cover; }
   @media screen and (max-width: 970px) {
     .logo_position_header {
       border: none;
@@ -405,7 +419,19 @@ template {
       padding: 0;
       max-width: 46px; }
     .logo:after {
-      background: url("../../icons/bamboo.svg") no-repeat left bottom/12px 12px; } }
+      background: url("../../icons/bamboo.svg") no-repeat left bottom/12px 12px; }
+    .logo_position_popup {
+      border-color: #fe9013;
+      font-family: "Roboto", "Arial", sans-serif;
+      font-size: 15px;
+      color: #fe9013;
+      font-weight: 400;
+      line-height: 18px;
+      padding-left: 0;
+      padding-right: 0;
+      max-width: 65px; }
+      .logo_position_popup:after {
+        background: url("../../../icons/bamboo-orange.svg") no-repeat center/cover; } }
   @media screen and (max-width: 480px) {
     .logo_position_footer {
       border: none;
@@ -413,7 +439,12 @@ template {
       max-width: 100%; }
       .logo_position_footer:after {
         background: url("../../../icons/bamboo.svg") no-repeat left bottom/25px 25px;
-        left: 75px; } }
+        left: 75px; }
+    .logo_position_popup {
+      color: #fe9013;
+      border-color: #fe9013; }
+      .logo_position_popup:after {
+        background: url("../../../icons/bamboo-orange.svg") no-repeat center/cover; } }
 
 .nav {
   width: 100%; }
@@ -421,8 +452,14 @@ template {
     list-style-type: none;
     padding: 0 63px;
     display: flex; }
+    .nav__wrapper_position_popup {
+      padding-left: 0;
+      flex-direction: column; }
   .nav__element + .nav__element {
     margin-left: 58px; }
+  .nav__element_position_popup + .nav__element_position_popup {
+    margin-left: 0;
+    margin-top: 15px; }
   .nav__link {
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 16px;
@@ -439,12 +476,19 @@ template {
       background-image: linear-gradient(#f9804b, #fe9013);
       pointer-events: none;
       cursor: default; }
+    .nav__link_position_popup {
+      color: #000000; }
   @media screen and (max-width: 1300px) {
     .nav__element + .nav__element {
-      margin-left: 48px; } }
+      margin-left: 48px; }
+    .nav__element_position_popup + .nav__element_position_popup {
+      margin-left: 0;
+      margin-top: 15px; } }
   @media screen and (max-width: 970px) {
     .nav__element + .nav__element {
       margin-left: 40px; }
+    .nav__element_position_popup + .nav__element_position_popup {
+      margin-left: 0; }
     .nav_notactive {
       display: none; }
     .nav__wrapper_position_footer {
@@ -456,7 +500,10 @@ template {
       font-size: 16px;
       line-height: 22px; }
     .nav__element + .nav__element {
-      margin-left: 28px; } }
+      margin-left: 28px; }
+    .nav__element_position_popup + .nav__element_position_popup {
+      margin-left: 0;
+      margin-top: 15px; } }
 
 .main {
   margin: 0 auto;
@@ -934,6 +981,8 @@ template {
     border-radius: 20px; }
     .donate__wrapper_position_donate {
       padding: 30px 70px 50px 120px; }
+  .donate__main-container {
+    position: relative; }
   .donate__title {
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 48px;
@@ -1335,6 +1384,8 @@ template {
   max-width: 1600px;
   margin: 0 auto;
   background: url("../../images/leav_foto.jpg") no-repeat right 110%/260px 330px; }
+  .testimonials_position_popup {
+    max-width: 267px; }
   .testimonials__wrapper {
     max-width: 1160px;
     margin: 0 auto;
@@ -1372,9 +1423,12 @@ template {
     .testimonials__post_notvisible {
       display: none; }
   .testimonials__post-wrapper {
+    max-height: 410px;
+    height: 100%;
     box-sizing: border-box;
     position: relative;
     min-width: 260px;
+    max-width: 295px;
     width: auto;
     padding: 15px;
     border: 0px solid transparent;
@@ -1391,6 +1445,8 @@ template {
       background: linear-gradient(rgba(254, 189, 171, 0.74), rgba(243, 169, 248, 0.66));
       border-radius: 20px;
       z-index: -1; }
+    .testimonials__post-wrapper_position_popup {
+      max-height: 95vh; }
   .testimonials__container {
     display: flex; }
   .testimonials__avatar {
@@ -1421,6 +1477,9 @@ template {
     line-height: 18px;
     max-height: 309px;
     overflow: hidden; }
+    .testimonials__text_position_popup {
+      max-height: 93vh;
+      overflow: auto; }
   @media screen and (max-width: 1300px) {
     .testimonials {
       background: url("../../images/leav_foto.jpg") no-repeat right 110%/200px 290px; }
@@ -1440,6 +1499,10 @@ template {
       background: url("../../images/leav_foto.jpg") no-repeat right 110%/100px 180px; }
     .testimonials__wrapper {
       padding: 57px 20px 50px; }
+    .testimonials__post-wrapper {
+      max-width: 100%; }
+      .testimonials__post-wrapper_position_popup {
+        max-width: 295px; }
     .testimonials__title {
       margin-bottom: 32px; }
     .testimonials__posts {
@@ -1450,10 +1513,14 @@ template {
       display: none; }
     .testimonials__post {
       padding-bottom: 5px; }
+      .testimonials__post:hover {
+        cursor: pointer; }
     .testimonials__text {
       max-height: 35px;
       overflow: hidden;
-      margin-bottom: 0px; } }
+      margin-bottom: 0px; }
+      .testimonials__text_position_popup {
+        max-height: 90vh; } }
   @media screen and (max-width: 480px) {
     .testimonials {
       background: url("../../images/leav_foto.jpg") no-repeat right 110%/60px 110px; }
@@ -1624,5 +1691,46 @@ template {
   @media screen and (max-width: 970px) {
     .subscribe-form {
       display: none; } }
+
+.popup {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  display: none; }
+  .popup_active {
+    display: block; }
+  .popup__nav-container {
+    padding: 10px 10px 40px;
+    position: relative;
+    width: 100%;
+    background-color: #ffffff; }
+  .popup__post-container {
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 20px 40px 17px 17px;
+    background-color: #ffffff;
+    z-index: -2; }
+  .popup__button {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    border: none;
+    background: url("../../../icons/x_icon.svg") no-repeat center/cover;
+    transition: 0.3s;
+    z-index: 5; }
+    .popup__button:hover {
+      cursor: pointer;
+      opacity: 0.6; }
+  @media screen and (max-width: 480px) {
+    .popup__button {
+      right: 30px; }
+      .popup__button_positon_postPopup {
+        right: 10px; } }
 
 /*# sourceMappingURL=style.css.map */

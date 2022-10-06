@@ -33,6 +33,12 @@
     min-height: 12px;
     border: none;
     background: url("../../icons/burger_menu.svg") no-repeat center/cover;
+    transition: $mainTransition;
+
+    &:hover {
+      cursor: pointer;
+      opacity: $contentOpacity;
+    }
   }
 
   @media screen and(max-width: $laptop) {
@@ -47,6 +53,11 @@
 
     &__text {
       display: none;
+      &_position_popup {
+          display: block;
+          color: #000000;
+          margin-top: 10px;
+        }
     }
 
     &__button {

@@ -20,6 +20,16 @@
     bottom: 5px;
   }
 
+  &_position_popup {
+    color: #fe9013;
+    border-color: #fe9013;
+    margin-bottom: 31px;
+
+    &:after {
+      background: url("../../../icons/bamboo-orange.svg") no-repeat center/cover;
+    }
+  }
+
   @media screen and(max-width: $laptop) {
     &_position_header {
       border: none;
@@ -29,8 +39,20 @@
     }
 
     &:after {
-      background: url("../../icons/bamboo.svg") no-repeat left bottom/12px
-        12px;
+      background: url("../../icons/bamboo.svg") no-repeat left bottom/12px 12px;
+    }
+
+    &_position_popup {
+      border-color: #fe9013;
+      @include font-source-sans(15px, #fe9013, 400, 18px);
+      padding-left: 0;
+      padding-right: 0;
+      max-width: 65px;
+
+      &:after {
+        background: url("../../../icons/bamboo-orange.svg") no-repeat
+          center/cover;
+      }
     }
   }
 
@@ -43,6 +65,15 @@
         background: url("../../../icons/bamboo.svg") no-repeat left bottom/25px
           25px;
         left: 75px;
+      }
+    }
+    &_position_popup {
+      color: #fe9013;
+      border-color: #fe9013;
+
+      &:after {
+        background: url("../../../icons/bamboo-orange.svg") no-repeat
+          center/cover;
       }
     }
   }
