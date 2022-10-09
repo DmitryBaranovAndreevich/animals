@@ -1353,6 +1353,8 @@ template {
       color: #000000;
       font-weight: 500;
       line-height: 18px; }
+      .progress-bar__text_active {
+        color: #fe9013; }
     .progress-bar__label {
       min-width: 5px;
       min-height: 5px; } }
@@ -1405,5 +1407,46 @@ template {
       color: #fe9013;
       font-weight: 400;
       line-height: 28px; } }
+
+.popup {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  display: none; }
+  .popup_active {
+    display: block; }
+  .popup__nav-container {
+    padding: 10px 10px 40px;
+    position: relative;
+    width: 100%;
+    background-color: #ffffff; }
+  .popup__post-container {
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 20px 40px 17px 17px;
+    background-color: #ffffff;
+    z-index: -2; }
+  .popup__button {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    border: none;
+    background: url("../../../icons/x_icon.svg") no-repeat center/cover;
+    transition: 0.3s;
+    z-index: 5; }
+    .popup__button:hover {
+      cursor: pointer;
+      opacity: 0.6; }
+  @media screen and (max-width: 480px) {
+    .popup__button {
+      right: 30px; }
+      .popup__button_positon_postPopup {
+        right: 10px; } }
 
 /*# sourceMappingURL=style.css.map */

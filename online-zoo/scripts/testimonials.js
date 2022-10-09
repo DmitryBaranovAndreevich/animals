@@ -120,6 +120,16 @@ The best online zoo I’ve met. My son delighted very much ljves to watch gouill
 The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.
 `,
   },
+  {
+    name: "Oskar Samborsky",
+    avatar: "../../images/testimonials/men1.svg",
+    location: "Local Austria &bull; Yesterday",
+    text: `Online zoo is one jf the ways to instill a love for animals.The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.The best online zoo I’ve met. My son delighted very much ljves to watch gouillas.
+The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.
+
+The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.
+`,
+  },
 ];
 
 const testimonials = document.querySelector(".testimonials");
@@ -128,6 +138,7 @@ const inputScroll = testimonials.querySelector(".testimonials__input");
 const templatePost = document.querySelector("#template-testimonials").content;
 let postsPosition = 0;
 let value = 0;
+let privValue = inputScroll.value;
 
 function addPost(el) {
   const sliderEl = templatePost
@@ -149,7 +160,16 @@ function initPosts() {
   }
 }
 
-
+function setMax() {
+if(screen.width <= 1024) {inputScroll.max = 9}
+if (screen.width > 1024) {
+  inputScroll.max = 8;
+}
+inputScroll.value = 0;
+value = 0;
+privValue = 1;
+}
+setMax();
 initPosts();
 setPosts();
 
@@ -161,6 +181,7 @@ window.addEventListener("resize", () => {
      elem.style.transform = `translateX(${postsPosition}px)`;
    }
 setPosts();
+setMax();
 })
 
 inputScroll.oninput = move;
@@ -168,7 +189,8 @@ function move() {
   let el = postContainer.querySelectorAll('.testimonials__post')
 
 const move = el[0].clientWidth + 35;
-const privValue = inputScroll.value;
+ privValue = inputScroll.value;
+ console.log(privValue,value)
 if(privValue > value) postsPosition -= move;
 if (privValue < value) postsPosition += move;
 value = privValue;

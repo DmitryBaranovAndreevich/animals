@@ -128,6 +128,10 @@
     &__text {
       margin-top: 5px;
       @include font-source-sans(13px, #000000, 500, 18px);
+
+      &_active {
+          color: #fe9013;
+        }
     }
 
     &__label {

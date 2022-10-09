@@ -42,6 +42,12 @@
       width: 116px;
       height: 6px;
       background-image: $color-gradient;
+      transition: 1s;
+
+      &:hover {
+        cursor: pointer;
+        opacity: .7;
+      }
     }
   }
 

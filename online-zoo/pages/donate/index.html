@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./style.css">
   <script type="module" src="../../scripts/validate.js" defer></script>
   <script type="module" src="./script.js" defer></script>
+  <script type="text/javascript" src="../../scripts/navPopup.js" defer></script>
   <title>donate</title>
 </head>
 
@@ -132,7 +133,7 @@
             <p class="progress-bar__text" id="prise8__text">$25</p>
           </div>
         </div>
-        <input class="donate__input" type="number" maxlength="4" placeholder="Another amount">
+        <input class="donate__input" type="number" min="0" max="9999" placeholder="Another amount">
         <div class="donate__checkbox">
           <input class="donate__radio" type="radio" id="monthly" name="pay">
           <label for="monthly" class="donate__label"></label>
@@ -186,5 +187,29 @@
     </div>
   </footer>
 </body>
+<section class="popup popup__nav">
+  <div class="popup__nav-container">
+    <button type="button" class="popup__button"></button>
+    <a href="./index.html" class="logo logo_position_popup">PetStory online</a>
+    <nav class="nav">
+      <ul class="nav__wrapper nav__wrapper_position_popup">
+        <li class="nav__element  nav__element_position_popup"><a class="nav__link nav__link_position_popup"
+            href="../main/index.html">About</a></li>
+        <li class="nav__element nav__element_position_popup"><a class="nav__link nav__link_position_popup"
+            href="">Map</a></li>
+        <li class="nav__element nav__element_position_popup"><a class="nav__link nav__link_position_popup"
+            href="">Zoos</a></li>
+        <li class="nav__element nav__element_position_popup">
+          <a class="nav__link nav__link_position_popup" href="../donate/index.html">Donate</a>
+        </li>
+        <li class="nav__element nav__element_position_popup">
+          <a class="nav__link nav__link_position_popup" href="">Contact us</a>
+        </li>
+      </ul>
+    </nav>
+    <a class="header__text header__text_position_popup" target="_blank"
+      href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks">Designed by &copy;</a>
+  </div>
+</section>
 
 </html>

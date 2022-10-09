@@ -1417,7 +1417,11 @@ template {
       -webkit-appearance: none;
       width: 116px;
       height: 6px;
-      background-image: linear-gradient(#f9804b, #fe9013); }
+      background-image: linear-gradient(#f9804b, #fe9013);
+      transition: 1s; }
+      .testimonials__input::-webkit-slider-thumb:hover {
+        cursor: pointer;
+        opacity: .7; }
   .testimonials__post {
     transition: 2s; }
     .testimonials__post_notvisible {

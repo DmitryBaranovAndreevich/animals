@@ -4,6 +4,13 @@ const prices = progresBar.querySelectorAll(".progress-bar__text");
 const wrapper = document.querySelector(".donate__wrapper");
 const header = document.querySelector(".header");
 const main = document.querySelector(".main");
+const inputDonate = document.querySelector(".donate__input");
+
+inputDonate.oninput = function () {
+  if (this.value.length > 4) {
+    this.value = this.value.slice(0, 4);
+  }
+};
 
 function resetColorText() {
   for (const text of prices) {
@@ -17,8 +24,22 @@ for (const button of radioButtons) {
     const text = progresBar.querySelector(`#${id}__text`);
     resetColorText();
     text.classList.toggle("progress-bar__text_active");
+    inputDonate.value = text.textContent.replace('$','');
   });
 }
+window.addEventListener("resize", () => {radioButtons[radioButtons.length - 3].click();})
+inputDonate.addEventListener('input', (e) => {
+   resetColorText();
+  for (const button of radioButtons) {
+    const id = button.getAttribute("id");
+    const text = progresBar.querySelector(`#${id}__text`);
+    const inputPrice = text.textContent.replace("$", "");
+    if(inputPrice == e.target.value) {
+      button.click()
+    }
+  }
+})
+radioButtons[radioButtons.length -3].click()
 
 const checkBoxContainers = Array.from(
   progresBar.querySelectorAll(".progress-bar__container")

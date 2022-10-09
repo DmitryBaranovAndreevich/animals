@@ -97,7 +97,7 @@ function addItemPrependSlider(slider) {
 
 function initalsPrepend() {
 
-  position = -(itemWidth + 30) * (images.length) + 1;
+  position = -(itemWidth + 30) * (images.length);
   for (const track of sliders) {
     addItemPrependSlider(track);
     setWidth()
@@ -230,7 +230,7 @@ setWidth();
 function setWidth() {
   const items = slider.querySelectorAll(".slider__item");
   let itemWidth =
-    (container.clientWidth - 30 * (showElements - 1)) / showElements;
+    (container.clientWidth - 30 * (showElements - 1)) / showElements ;
     if(container.clientWidth < 483) itemWidth = 285;
   items.forEach((item) => {
     item.style.minWidth = `${itemWidth}px`;
