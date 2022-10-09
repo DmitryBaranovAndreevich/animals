@@ -59,12 +59,11 @@ let scrolElements = showElements;
 let itemWidth =
   (container.clientWidth - 30 * (showElements - 1)) / showElements;
 const movePosition = scrolElements * itemWidth + 30 * scrolElements;
-const header = document.querySelector('.header');
-const main = document.querySelector('.main');
+const header = document.querySelector(".header");
+const main = document.querySelector(".main");
 const templateSlider = document.querySelector("#teplate-slider").content;
 let scrollingEltoLeft = 0;
 let scrollingEltoRight = 0;
-
 
 function cloneEl(el) {
   const sliderEl = templateSlider
@@ -76,13 +75,13 @@ function cloneEl(el) {
   const icon = sliderEl.querySelector(".slider__item-icon");
   icon.src = el.icon;
   icon.alt = el.comment;
-  return sliderEl
+  return sliderEl;
 }
 
 function initSlider(slider) {
-  for(const el of images) {
-    const sliderItem  = cloneEl(el);
-    slider.append(sliderItem)
+  for (const el of images) {
+    const sliderItem = cloneEl(el);
+    slider.append(sliderItem);
   }
   images = images.reverse();
 }
@@ -96,33 +95,31 @@ function addItemPrependSlider(slider) {
 }
 
 function initalsPrepend() {
-
-  position = -(itemWidth + 30) * (images.length);
+  position = -(itemWidth + 30) * images.length;
   for (const track of sliders) {
     addItemPrependSlider(track);
-    setWidth()
+    setWidth();
     track.style.transition = "0s";
     track.style.transform = `translateX(${position}px)`;
     setTimeout(() => (track.style.transition = "2s"), 50);
   }
-scrollingEltoLeft += images.length;
-
+  scrollingEltoLeft += images.length;
 }
 
 function initals() {
-for(const slider of sliders) {
-  initSlider(slider);
-}
+  for (const slider of sliders) {
+    initSlider(slider);
+  }
 }
 initals();
 
 window.addEventListener("resize", () => {
-    if (container.clientWidth < 800) showElements = 2;
-    if (container.clientWidth > 800) showElements = 3;
-    itemWidth =  setWidth();
-    position =
-      container.clientWidth <= 560 ? 0 : -(itemWidth + 30) * showElements;
-    scrollingEltoLeft = showElements;
+  if (container.clientWidth < 800) showElements = 2;
+  if (container.clientWidth > 800) showElements = 3;
+  itemWidth = setWidth();
+  position =
+    container.clientWidth <= 560 ? 0 : -(itemWidth + 30) * showElements;
+  scrollingEltoLeft = showElements;
   tracks.forEach((track) => {
     track.style.transform = `translateX(${position}px)`;
   });
@@ -134,7 +131,7 @@ window.addEventListener("resize", () => {
 window.addEventListener("scroll", function () {
   let dist = 0;
   dist += this.window.scrollY;
-  if (window.screen.width <= 970 && dist > 0){
+  if (window.screen.width <= 970 && dist > 0) {
     header.classList.add("header_fix");
     main.style.marginTop = `${header.clientHeight}px`;
   }
@@ -145,25 +142,24 @@ window.addEventListener("scroll", function () {
 });
 
 function deleteItemsToLeft() {
-  position = -(itemWidth + 30)*showElements +1;
-  tracks.forEach(track => {
+  position = -(itemWidth + 30) * showElements + 1;
+  tracks.forEach((track) => {
     const items = track.querySelectorAll(".slider__item");
     const size = scrollingEltoLeft - showElements;
     for (let i = 0; i < size; i++) {
       items[i].remove();
     }
-     track.style.transition = '0s';
+    track.style.transition = "0s";
     track.style.transform = `translateX(${position}px)`;
-    setTimeout(() =>  track.style.transition = "2s", 50)
-   })
-   scrollingEltoLeft = showElements;
+    setTimeout(() => (track.style.transition = "2s"), 50);
+  });
+  scrollingEltoLeft = showElements;
 }
 
 function deleteItemsToRight() {
-
   tracks.forEach((track) => {
     const items = track.querySelectorAll(".slider__item");
-    const size = images.length + 2*showElements
+    const size = images.length + 2 * showElements;
     for (let i = items.length - 1; i > size; i--) {
       items[i].remove();
     }
@@ -173,9 +169,9 @@ if (position >= 0 && container.clientWidth > 560) {
   initalsPrepend();
 }
 
-
 function right() {
   btnNext.onclick = null;
+  btnPrev.onclick = null;
   const items = slider.querySelectorAll(".slider__item");
   const itemWidth =
     (container.clientWidth - 30 * (showElements - 1)) / showElements;
@@ -198,18 +194,20 @@ function right() {
   }
   setTimeout(() => {
     btnNext.onclick = right;
-  }, 2000);
+    btnPrev.onclick = left;
+  }, 2300);
 }
 
 btnNext.onclick = right;
 
 function left() {
   btnPrev.onclick = null;
+  btnNext.onclick = null;
   const itemWidth =
     (container.clientWidth - 30 * (showElements - 1)) / showElements;
   const movePosition = scrolElements * itemWidth + 30 * scrolElements;
-    position +=  movePosition;
-    scrollingEltoLeft -=showElements;
+  position += movePosition;
+  scrollingEltoLeft -= showElements;
   tracks.forEach((track) => {
     track.style.transform = `translateX(${position}px)`;
   });
@@ -220,8 +218,9 @@ function left() {
   }
   setTimeout(() => {
     btnPrev.onclick = left;
-  }, 2000);
-};
+    btnNext.onclick = right;
+  }, 2300);
+}
 
 btnPrev.onclick = left;
 
@@ -230,13 +229,13 @@ setWidth();
 function setWidth() {
   const items = slider.querySelectorAll(".slider__item");
   let itemWidth =
-    (container.clientWidth - 30 * (showElements - 1)) / showElements ;
-    if(container.clientWidth < 483) itemWidth = 285;
+    (container.clientWidth - 30 * (showElements - 1)) / showElements;
+  if (container.clientWidth < 483) itemWidth = 285;
   items.forEach((item) => {
     item.style.minWidth = `${itemWidth}px`;
     const image = item.querySelector(".slider__item-image");
     image.style.maxWidth = `${itemWidth - 2}px`;
     image.style.maxHeight = `${itemWidth}px`;
   });
-  return itemWidth
+  return itemWidth;
 }
