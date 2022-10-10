@@ -1725,7 +1725,7 @@ template {
     width: 14px;
     height: 14px;
     border: none;
-    background: url("../../../icons/x_icon.svg") no-repeat center/cover;
+    background: url("../../icons/x_icon.svg") no-repeat center/cover;
     transition: 0.3s;
     z-index: 5; }
     .popup__button:hover {
