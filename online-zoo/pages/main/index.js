@@ -65,6 +65,10 @@ const templateSlider = document.querySelector("#teplate-slider").content;
 let scrollingEltoLeft = 0;
 let scrollingEltoRight = 0;
 
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+
 function cloneEl(el) {
   const sliderEl = templateSlider
     .querySelector(".slider__item")
@@ -78,51 +82,57 @@ function cloneEl(el) {
   return sliderEl;
 }
 
-function initSlider(slider) {
-  for (const el of images) {
-    const sliderItem = cloneEl(el);
+function initSlider(slider,images) {
+  for (let i = 0; i < showElements; i++) {
+    const sliderItem = cloneEl(images.pop());
     slider.append(sliderItem);
   }
-  images = images.reverse();
 }
 
-function addItemPrependSlider(slider) {
-  for (const el of images) {
-    const sliderItem = cloneEl(el);
+function addItemPrependSlider(slider,images) {
+  for (let i = 0; i < showElements; i++) {
+    const sliderItem = cloneEl(images.pop());
     slider.prepend(sliderItem);
   }
-  images = images.reverse();
 }
 
 function initalsPrepend() {
-  position = -(itemWidth + 30) * images.length;
+  shuffle(images);
+  let imagesCopy = [...images];
+  position = -(itemWidth + 30) * showElements;
   for (const track of sliders) {
-    addItemPrependSlider(track);
+    addItemPrependSlider(track,imagesCopy);
     setWidth();
     track.style.transition = "0s";
     track.style.transform = `translateX(${position}px)`;
-    setTimeout(() => (track.style.transition = "2s"), 50);
   }
-  scrollingEltoLeft += images.length;
 }
 
 function initals() {
+  shuffle(images);
+  let imagesCopy = [...images];
   for (const slider of sliders) {
-    initSlider(slider);
+    initSlider(slider,imagesCopy);
   }
 }
 initals();
 
+
 window.addEventListener("resize", () => {
   if (container.clientWidth < 800) showElements = 2;
+  if(screen.width <= 560) showElements = 4;
   if (container.clientWidth > 800) showElements = 3;
   itemWidth = setWidth();
-  position =
-    container.clientWidth <= 560 ? 0 : -(itemWidth + 30) * showElements;
-  scrollingEltoLeft = showElements;
+  position = 0;
   tracks.forEach((track) => {
+     const items = track.querySelectorAll(".slider__item");
+     for (let i = 0; i < items.length; i++) {
+       items[i].remove();
+     }
     track.style.transform = `translateX(${position}px)`;
   });
+  initals();
+  setWidth();
   cardWidth = container.clientWidth;
 
   scrolElements = showElements;
@@ -142,56 +152,46 @@ window.addEventListener("scroll", function () {
 });
 
 function deleteItemsToLeft() {
-  position = -(itemWidth + 30) * showElements + 1;
+  position = 0;
   tracks.forEach((track) => {
     const items = track.querySelectorAll(".slider__item");
-    const size = scrollingEltoLeft - showElements;
-    for (let i = 0; i < size; i++) {
+    for (let i = 0; i < showElements; i++) {
       items[i].remove();
     }
     track.style.transition = "0s";
     track.style.transform = `translateX(${position}px)`;
     setTimeout(() => (track.style.transition = "2s"), 50);
   });
-  scrollingEltoLeft = showElements;
+  scrollingEltoLeft = 0;
 }
 
 function deleteItemsToRight() {
   tracks.forEach((track) => {
     const items = track.querySelectorAll(".slider__item");
-    const size = images.length + 2 * showElements;
-    for (let i = items.length - 1; i > size; i--) {
+    for (let i = items.length - 1; i >= items.length - showElements; i--) {
       items[i].remove();
     }
   });
-}
-if (position >= 0 && container.clientWidth > 560) {
-  initalsPrepend();
 }
 
 function right() {
   btnNext.onclick = null;
   btnPrev.onclick = null;
-  const items = slider.querySelectorAll(".slider__item");
+  initals();
+  setWidth();
+
   const itemWidth =
     (container.clientWidth - 30 * (showElements - 1)) / showElements;
 
   const movePosition = scrolElements * itemWidth + 30 * scrolElements;
 
-  const itemsLeft = Math.ceil(
-    items.length / 2 -
-      (Math.abs(position) + showElements * itemWidth) / itemWidth
-  );
   position -= movePosition;
-  scrollingEltoLeft += showElements;
   tracks.forEach((track) => {
     track.style.transform = `translateX(${position}px)`;
   });
-  if (itemsLeft <= scrolElements) {
-    initals();
-    setWidth();
+
     setTimeout(deleteItemsToLeft, 2000);
-  }
+
   setTimeout(() => {
     btnNext.onclick = right;
     btnPrev.onclick = left;
@@ -203,27 +203,28 @@ btnNext.onclick = right;
 function left() {
   btnPrev.onclick = null;
   btnNext.onclick = null;
-  const itemWidth =
-    (container.clientWidth - 30 * (showElements - 1)) / showElements;
-  const movePosition = scrolElements * itemWidth + 30 * scrolElements;
-  position += movePosition;
-  scrollingEltoLeft -= showElements;
-  tracks.forEach((track) => {
-    track.style.transform = `translateX(${position}px)`;
-  });
-  if (position >= 0) {
-    deleteItemsToRight();
-    setTimeout(initalsPrepend, 2000);
-    setWidth();
-  }
+  initalsPrepend();
+  setWidth();
+
   setTimeout(() => {
+    const itemWidth =
+      (container.clientWidth - 30 * (showElements - 1)) / showElements;
+    const movePosition = scrolElements * itemWidth + 30 * scrolElements;
+
+    position += movePosition;
+    tracks.forEach((track) => {
+      track.style.transition = "2s";
+      track.style.transform = `translateX(${position}px)`;
+    });
+  }, 200);
+  setTimeout(() => {
+    deleteItemsToRight();
     btnPrev.onclick = left;
     btnNext.onclick = right;
   }, 2300);
 }
 
 btnPrev.onclick = left;
-
 setWidth();
 
 function setWidth() {
