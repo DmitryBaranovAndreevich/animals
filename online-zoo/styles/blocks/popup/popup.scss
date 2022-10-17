@@ -1,0 +1,57 @@
+.popup {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: .5);
+  z-index: 3;
+  display: none;
+
+  &_active {
+    display: block;
+  }
+
+  &__nav-container {
+    padding: 10px 10px 40px;
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+  }
+
+  &__post-container {
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 20px 40px 17px 17px;
+    background-color: #ffffff;
+    z-index: -2;
+  }
+
+  &__button {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    border: none;
+    background: url('../../icons/x_icon.svg') no-repeat center/cover;
+    transition: $mainTransition;
+    z-index: 5;
+
+    &:hover {
+      cursor: pointer;
+      opacity: $contentOpacity;
+    }
+
+  }
+
+    @media screen and(max-width: $phones) {
+      &__button {
+        right: 30px;
+
+        &_positon_postPopup {
+          right: 10px;
+        }
+      }
+    }
+}

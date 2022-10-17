@@ -1,0 +1,125 @@
+.footer {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  background: #000000;
+
+  &__wrapper {
+    position: relative;
+    padding: 41px 0 50px;
+    max-width: $mainWidth;
+    margin: 0 auto;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+
+  &__links-container {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__links {
+    max-width: 330px;
+    width: 100%;
+    margin-top: 40px;
+    padding: 0;
+    @include font-source-sans(16px, #ffffff, 400, 23px);
+    list-style-type: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    @include font-source-sans(16px, #ffffff, 400, 23px);
+    display: flex;
+    align-items: center;
+    margin-top: 11px;
+    transition: $mainTransition;
+
+    &:hover {
+      opacity: $headerOpacity;
+    }
+  }
+
+  &__linc-logo {
+    width: 16px;
+    height: 16px;
+    object-fit: cover;
+    background: rgba(196, 196, 196, 0.5);
+    border: 5px solid rgba(196, 196, 196, 0.5);
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  @media screen and(max-width: $desctop) {
+    & {
+      &__wrapper {
+        padding: 41px 40px 50px;
+
+        &_position_donate {
+          padding-right: 60px;
+        }
+      }
+
+      &__links {
+        max-width: 230px;
+      }
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+
+    &__wrapper {
+      padding: 12px 20px;
+    }
+
+    &__links-container {
+      margin-top: 100px;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      &_position_donate {
+        margin-top: 100px;
+
+      }
+    }
+
+    &__links {
+      display: flex;
+      flex-direction:  column;
+      gap: 8px;
+      position: absolute;
+      top: 5px;
+      right: 20px;
+      margin: 0;
+      max-width: 26px;
+    }
+
+    &__link {
+      max-width: 26px;
+      width: 26px;
+      overflow: hidden;
+    }
+  }
+
+    @media screen and(max-width: $phones) {
+
+      &__wrapper {
+        padding: 18px 13px;
+      }
+
+      &__links {
+        flex-direction: row;
+        top: 60px;
+          right: 230px;
+          gap: 30px;
+      }
+
+             &__links-container {
+              margin:110px 10px 0;
+             }
+    }
+}

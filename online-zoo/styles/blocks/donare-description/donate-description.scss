@@ -1,0 +1,50 @@
+.donate-description {
+  max-width: $mainWidth;
+  margin: 0 auto;
+
+  &__title {
+    @include font-source-sans(36px, #ffffff, 400, 47px);
+    margin: 30px 0 10px;
+  }
+
+  &__text {
+    @include font-source-sans(16px, #ffffff, 500, 22px);
+    margin: 0 0 50px;
+  }
+
+  &__subtitle {
+    @include font-source-sans(36px, #fe9013, 400, 47px);
+    margin: 0;
+  }
+
+  @media screen and(max-width: $desctop) {
+    & {
+      margin: 0 30px;
+    }
+
+    &__title {
+      margin-bottom: 35px;
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+    & {
+      margin: 0 10px;
+    }
+    &__title {
+      @include font-source-sans(24px, #ffffff, 400, 28px);
+      margin-bottom: 20px;
+    }
+    &__text {
+      margin-bottom: 30px;
+    }
+  }
+
+    @media screen and(max-width: 630px) {
+        & {
+            &__subtitle {
+                @include font-source-sans(24px, #fe9013, 400, 28px);
+            }
+          }
+    }
+}

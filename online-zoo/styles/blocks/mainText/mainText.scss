@@ -1,0 +1,4 @@
+.mainText {
+  margin: 0;
+  @include font-source-sans(16px, #333b41, 400, 21px);
+}
