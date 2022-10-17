@@ -1,2 +1,1 @@
-# dmitrybaranovandreevich-JSFE2022Q3
-Private repository for @dmitrybaranovandreevich
+Приложение можно посмотреть тут: https://dmitrybaranovandreevich.github.io/animals/online-zoo/pages/main/
