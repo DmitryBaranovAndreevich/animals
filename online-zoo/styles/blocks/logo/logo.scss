@@ -1,0 +1,80 @@
+.logo {
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  max-width: 85px;
+  padding: 3px 5px;
+  @include font-source-sans(19px, #ffffff, 400, 23px);
+  border: 1px solid rgba(#ffffff, 0.5);
+  border-radius: 2px;
+  text-decoration: none;
+
+  &:after {
+    @include pseudo;
+    background: url("../../../icons/bamboo.svg") no-repeat center/cover;
+    width: 20px;
+    height: 20px;
+    bottom: 5px;
+  }
+
+  &_position_popup {
+    color: #fe9013;
+    border-color: #fe9013;
+    margin-bottom: 31px;
+
+    &:after {
+      background: url("../../../icons/bamboo-orange.svg") no-repeat center/cover;
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+    &_position_header {
+      border: none;
+      @include font-source-sans(12px, #ffffff, 400, 15px);
+      padding: 0;
+      max-width: 46px;
+    }
+
+    &:after {
+      background: url("../../icons/bamboo.svg") no-repeat left bottom/12px 12px;
+    }
+
+    &_position_popup {
+      border-color: #fe9013;
+      @include font-source-sans(15px, #fe9013, 400, 18px);
+      padding-left: 0;
+      padding-right: 0;
+      max-width: 65px;
+
+      &:after {
+        background: url("../../../icons/bamboo-orange.svg") no-repeat
+          center/cover;
+      }
+    }
+  }
+
+  @media screen and(max-width: $phones) {
+    &_position_footer {
+      border: none;
+      margin: 0 auto 55px;
+      max-width: 100%;
+      &:after {
+        background: url("../../../icons/bamboo.svg") no-repeat left bottom/25px
+          25px;
+        left: 75px;
+      }
+    }
+    &_position_popup {
+      color: #fe9013;
+      border-color: #fe9013;
+
+      &:after {
+        background: url("../../../icons/bamboo-orange.svg") no-repeat
+          center/cover;
+      }
+    }
+  }
+}

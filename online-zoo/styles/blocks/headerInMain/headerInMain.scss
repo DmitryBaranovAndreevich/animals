@@ -1,0 +1,114 @@
+.headerInMain {
+  padding: 85px 270px 95px 270px;
+  background: url("../../images/GiantPanda.jpg") no-repeat center/cover;
+  overflow: hidden;
+
+  &_positon_donate {
+    box-sizing: border-box;
+    min-height: 390px;
+  }
+
+  &__wrapper {
+    display: flex;
+    margin: 0 auto;
+    align-items: flex-end;
+    flex-direction: column;
+    max-width: $mainWidth;
+    gap: 60px;
+  }
+
+  &__span {
+    color: #ffee2e;
+  }
+
+  &__title {
+    position: relative;
+    max-width: 400px;
+    margin: 0;
+    text-align: center;
+    @include font-source-sans(106px, #ffffff, 700, 80px);
+    text-transform: uppercase;
+    z-index: 1;
+
+    &:before {
+      @include pseudo;
+      width: 465px;
+      height: 465px;
+      background-image: $color-gradient;
+      border-radius: 50%;
+      z-index: -1;
+      bottom: 10px;
+      right: 50px;
+    }
+  }
+
+  @media screen and(max-width: $desctop) {
+    & {
+      padding: 40px 90px 55px 85px;
+
+      &__wrapper {
+        gap: 40px;
+      }
+
+      &__title {
+        @include font-source-sans(85px, #ffffff, 700, 63px);
+
+        &:before {
+          width: 367px;
+          height: 367px;
+          bottom: 5px;
+          right: 85px;
+        }
+      }
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+    & {
+      padding: 50px 20px 35px 20px;
+
+      &_positon_donate {
+        box-sizing: border-box;
+        min-height: 335px;
+      }
+    }
+
+    &__wrapper {
+      gap: 0;
+    }
+
+    &__title {
+      max-width: 255px;
+      @include font-source-sans(54px, #ffffff, 700, 40px);
+
+      &:before {
+        width: 237px;
+        height: 237px;
+        bottom: 5px;
+        right: 55px;
+      }
+    }
+  }
+
+  @media screen and(max-width: $phones) {
+    & {
+      padding: 45px 10px 40px 35px;
+
+      &_positon_donate {
+        min-height: 190px;
+      }
+
+      &__title {
+        max-width: 128px;
+        @include font-source-sans(27px, #ffffff, 700, 20px);
+
+        &:before {
+          width: 119px;
+          height: 119px;
+          bottom: 5px;
+          right: 30px;
+        }
+      }
+    }
+  }
+}

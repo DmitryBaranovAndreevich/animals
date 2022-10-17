@@ -1,0 +1,142 @@
+.progress-bar {
+  min-height: 27px;
+  margin: 18px 0;
+  display: flex;
+  justify-content: flex-start;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+
+    &_smallWidth {
+      width: 70px;
+    }
+
+    &_hidden {
+      display: none;
+    }
+
+    &:first-child {
+      width: 70px;
+    }
+
+    &:last-child {
+      width: 95px;
+    }
+  }
+
+  &__checkbox {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #404950;
+  }
+
+  &__line {
+    position: relative;
+    width: 100%;
+    border-top: 2px solid #72828e;
+    z-index: 3;
+
+    &_hidden {
+      border-color: transparent;
+      max-width: 50px;
+    }
+  }
+
+  &__elipse {
+    width: 0px;
+    height: 0px;
+
+    &:checked + .progress-bar__label:after {
+      @include pseudo;
+      top: -4px;
+      bottom: -4px;
+      left: -4px;
+      right: -4px;
+      background-color: transparent;
+      border-radius: 50%;
+      border: 1px solid #fe9013;
+    }
+
+    &:checked + .progress-bar__label:before {
+      @include pseudo;
+      top: -9px;
+      bottom: -9px;
+      left: -9px;
+      right: -9px;
+      background-color: transparent;
+      border-radius: 50%;
+      border: 1px solid #fe9013;
+    }
+
+    &:checked ~ progress-bar__text {
+      color: #fe9013;
+    }
+  }
+
+  &__label {
+    z-index: 1;
+    display: block;
+    position: relative;
+    min-width: 10px;
+    min-height: 10px;
+    border-radius: 50%;
+    background: #ffee2e;
+    cursor: pointer;
+  }
+
+  &__text {
+    margin: 10px 0 0 0;
+    text-align: center;
+    @include font-source-sans(26px, #333b41, 500, 36px);
+
+    &_active {
+      color: #fe9013;
+    }
+  }
+
+  @media screen and(max-width: 1100px) {
+    & {
+      max-width: 820px;
+      margin-left: 10px;
+
+      &__line {
+        max-width: 100px;
+        &_hidden {
+          max-width: 20px;
+        }
+      }
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+    margin: 10px 0 0;
+
+    &__line {
+      max-width: 150px;
+    }
+  }
+
+  @media screen and(max-width: 630px) {
+    &__checkbox {
+      padding: 4px 0;
+    }
+
+    &__text {
+      margin-top: 5px;
+      @include font-source-sans(13px, #000000, 500, 18px);
+
+      &_active {
+          color: #fe9013;
+        }
+    }
+
+    &__label {
+      min-width: 5px;
+      min-height: 5px;
+    }
+  }
+}

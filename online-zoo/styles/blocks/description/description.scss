@@ -1,0 +1,86 @@
+.description {
+  padding: 140px 0 180px;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  background: url("../../images/flower_foto1.jpg") no-repeat 100% 10%;
+
+  &__wrapper {
+    max-width: $mainWidth;
+    margin: 0 auto;
+    display: flex;
+    gap: 75px;
+  }
+
+  &__image {
+    display: block;
+    max-width: 609px;
+    min-width: 445px;
+    max-height: 425px;
+    min-height: 405px;
+    width: 250%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__text-container {
+    display: flex;
+    padding: 0 10px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  @media screen and(max-width: $desctop) {
+    & {
+      background: #ffffff;
+      padding: 110px 30px 80px 30px;
+
+      &__image {
+        max-width: 455px;
+      }
+
+      &__text-container {
+        padding: 0;
+      }
+
+      &__wrapper {
+        gap: 28px;
+      }
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+    & {
+      padding-top: 70px;
+      padding-bottom: 40px;
+      background: url("../../images/flower_foto1.jpg") no-repeat 100% 10%/ 130px
+        476px;
+
+      &__wrapper {
+        max-width: 495px;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 0;
+      }
+
+      &__image {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and(max-width: $phones) {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: url("../../images/flower_foto2.jpg") no-repeat 100% 15%/ 35px
+      216px;
+
+    &__wrapper {
+      padding-top: 43px;
+    }
+
+    &__text-container {
+      gap: 10px;
+    }
+  }
+}

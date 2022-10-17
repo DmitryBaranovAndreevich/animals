@@ -1,0 +1,260 @@
+.slider {
+  padding: 0 150px;
+  background: url("../../images/palm_foto.jpg") no-repeat bottom left/ auto
+      460px,
+    url("../../images/strelitzia1.jpg") no-repeat bottom right/ auto 275px;
+
+  &__wrapper {
+    position: relative;
+    max-width: $mainWidth;
+    margin: 0 auto;
+    padding-bottom: 100px;
+  }
+
+  &__container {
+    overflow: hidden;
+  }
+
+  &__buttons {
+    padding: 10px;
+  }
+
+  &__button-prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 62px;
+    height: 62px;
+    position: absolute;
+    left: -80px;
+    top: 36%;
+    background-image: $color-gradient;
+    border: none;
+    border-radius: 50%;
+    transition: $mainTransition;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      width: 16px;
+      height: 8px;
+      background: url("../../icons/slider/VectorToLeft.svg") no-repeat
+        center/cover;
+    }
+
+    &:hover {
+      opacity: $contentOpacity;
+    }
+  }
+
+  &__button-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 62px;
+    height: 62px;
+    position: absolute;
+    right: -80px;
+    top: 36%;
+    background-image: $color-gradient;
+    border: none;
+    border-radius: 50%;
+    transition: $mainTransition;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      width: 16px;
+      height: 8px;
+      background: url("../../icons/slider/VectorToLeft.svg") no-repeat
+        center/cover;
+      transform: rotate(180deg);
+    }
+
+    &:hover {
+      opacity: $contentOpacity;
+    }
+  }
+
+  &__track {
+    display: flex;
+    transition: 2s;
+    gap: 30px;
+  }
+
+  &__item {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border-image: $color-gradient;
+    border-image-slice: 1;
+
+    &:hover {
+      border-image: none;
+    }
+
+    &:hover > .slider__image-wrapper {
+      transform: scale(1.1);
+    }
+
+    &:hover > .slider__image-wrapper::after {
+      opacity: 1;
+    }
+
+    &:hover > .slider__item-description > div > .slider__item-title {
+      color: #ffffff;
+      transform: translateY(-200px);
+    }
+
+    &:hover > .slider__item-description > div > .slider__item-subtitle {
+      color: #ffffff;
+      transform: translateY(-200px);
+    }
+
+    &:hover > .slider__item-description > .slider__item-icon {
+      transform: translateY(-50px);
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    transition: $mainTransition;
+
+    &:after {
+      @include pseudo;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      opacity: 0;
+    }
+  }
+
+  &__item-image {
+    position: relative;
+    max-width: 366px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+
+  &__item-description {
+    padding: 8px 16px 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+  }
+
+  &__item-title {
+    margin: 0;
+    @include font-source-sans(16px, #000000, 500, 22px);
+    text-transform: uppercase;
+    transition: $mainTransition;
+  }
+
+  &__item-subtitle {
+    margin: 0;
+    @include font-source-sans(15px, #000000, 300, 18px);
+    transition: $mainTransition;
+  }
+
+  &__item-icon {
+    transition: $mainTransition;
+  }
+
+  @media screen and(max-width: $desctop) {
+    & {
+      padding: 70px 30px 45px;
+      background: url("../../images/palm_foto.jpg") no-repeat bottom left/
+          196px 202px,
+        url("../../images/strelitzia1.jpg") no-repeat bottom right/ auto
+          181px;
+
+      &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 171px;
+        padding: 15px 0;
+      }
+
+      &__button-prev,
+      &__button-next {
+        position: static;
+      }
+    }
+  }
+
+  @media screen and(max-width: $laptop) {
+    & {
+      padding-top: 40px;
+      background: url("../../images/palm_foto.jpg") no-repeat bottom left/
+          150px 190px,
+        url("../../images/strelitzia1.jpg") no-repeat bottom right/ auto
+          131px;
+    }
+
+    &__wrapper {
+      padding-bottom: 55px;
+    }
+
+    &__buttons {
+      gap: 40px;
+    }
+  }
+
+  @media screen and(max-width: 560px) {
+    & {
+      background: url("../../images/palm_foto.jpg") no-repeat bottom left/
+          50px 75px,
+        url("../../images/strelitzia1.jpg") no-repeat bottom right/ 70px 70px;
+      padding: 10px 10px 20px 10px;
+    }
+
+    &__wrapper {
+      padding-bottom: 40px;
+    }
+
+    &__container {
+      &_notvisible {
+        display: none;
+      }
+    }
+
+    &__buttons {
+      display: none;
+    }
+
+    &__track {
+      flex-direction: column;
+      align-items: center;
+      max-height: 1400px;
+      gap: 20px;
+    }
+
+    &__item-description {
+      padding: 8px 13px 8px;
+    }
+
+    &__item {
+      max-width: 285px;
+      margin-right: 15px;
+    }
+
+    &__item-title {
+      @include font-source-sans(12px, #000000, 500, 17px);
+    }
+
+    &__item-subtitle {
+      @include font-source-sans(11px, #000000, 300, 14px);
+    }
+
+    &__item-icon {
+      width: 25px;
+      height: 28px;
+    }
+  }
+}
