@@ -1,1 +1,4 @@
-Приложение можно посмотреть тут: https://dmitrybaranovandreevich.github.io/animals/online-zoo/pages/main/
+<h2 align="center">Проект "Онлайн-зоопарк"</h2>
+<p>Сайт предназначен для возможности поддержать содержание животного из зоопарка донатами от гостей сайта. На данный момент реализовано 2 страницы:main и donate. В дальнейшем необходимо будет реализовать оставшиеся страницы.</p>
+<p>Основной стек: HTML, CSS, JS</p>
+<p>Приложение можно посмотреть тут: https://dmitrybaranovandreevich.github.io/animals/online-zoo/pages/main/</p>
